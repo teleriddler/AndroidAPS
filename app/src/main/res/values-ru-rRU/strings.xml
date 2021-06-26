@@ -2,7 +2,6 @@
 <resources>
     <!--    <string name="fi_lang" translatable="false">Finnish</string> -->
     <!--   <string name="he_lang" translatable="false">Hebrew</string> -->
-    <!--    <string name="ga_lang" translatable="false">Irish</string> -->
     <!--    <string name="ja_lang" translatable="false">Japanese</string> -->
     <string name="treatmentssafety_title">Безопасность терапии</string>
     <string name="treatmentssafety_maxbolus_title">Макс разрешенный болюс [U] ед.</string>
@@ -30,7 +29,6 @@
     <string name="description_overview">Отображает текущее состояние цикла и часто используемые кнопки</string>
     <string name="description_persistent_notification">Показывает текущие уведомления и краткий обзор событий цикла</string>
     <string name="description_profile_local">Определите профиль, доступный в автономном режиме.</string>
-    <string name="description_profile_nightscout">Содержит профиль, заданный в Nightscout</string>
     <string name="description_pump_mdi">Интеграция с помпой для тех, кто для компенсации диабета пользуется инъекциями шприц-ручек</string>
     <string name="description_pump_virtual">Интеграция с помпами, еще не имеющими драйвера (незамкнутый цикл)</string>
     <string name="description_sensitivity_aaps">Чувствительность вычисляется аналогично алгоритму oref0, но можно включить период прошлого. Минимальное усвоение углеводов вычисляется на основе макс усвоения из настроек.</string>
@@ -78,14 +76,11 @@
     <string name="sms_delta">дельта:</string>
     <string name="configbuilder">Конфигуратор</string>
     <string name="overview">Начало</string>
-    <string name="nsprofile">профиль NS</string>
     <string name="treatments">Терапия</string>
     <string name="virtualpump">Виртуальная помпа</string>
     <string name="careportal">Портал лечения / назначений</string>
     <string name="configbuilder_pump">помпа</string>
     <string name="configbuilder_pump_description">Какой помпой вы хотели бы пользоваться с AndroidAPS?</string>
-    <string name="configbuilder_treatments">назначения</string>
-    <string name="configbuilder_treatments_description">Каким плагином пользоваться для выполнения назначений?</string>
     <string name="configbuilder_profile">профиль</string>
     <string name="configbuilder_profile_description">Какой профиль следует использовать в AndroidAPS?</string>
     <string name="configbuilder_aps">система ИПЖ</string>
@@ -94,7 +89,6 @@
     <string name="configbuilder_general_description">Это некоторые общепринятые плагины которые могут пригодиться.</string>
     <string name="configbuilder_constraints_description">Какие ограничения применяются?</string>
     <string name="constraints">ограничения</string>
-    <string name="loop">замкнутый цикл</string>
     <string name="configbuilder_loop">замкнутый цикл</string>
     <string name="configbuilder_loop_description">Используйте, чтобы активировать интеграцию AndroidAPS в цикл ИПЖ.</string>
     <string name="loop_aps_label">Система ИПЖ</string>
@@ -139,6 +133,7 @@
     <string name="configbuilder_nightscoutversion_label">версия Nightscout:</string>
     <string name="missing_carbs">Не хватает %1$d г</string>
     <string name="exported">настройки экспортированы</string>
+    <string name="ue_exported">Записи пользователя экспортированы</string>
     <string name="export_to">экспортировать настройки в</string>
     <string name="import_from">импортировать настройки из</string>
     <string name="setting_imported">настройки импортированы</string>
@@ -195,7 +190,7 @@
     <string name="smscommunicator_loophasbeenenabled">зцикл был активирован</string>
     <string name="smscommunicator_loopisenabled">зцикл работает</string>
     <string name="valuelimitedto">%1$.2f ограничено до %2$.2f</string>
-    <string name="valueoutofrange">Значение %1$s недопустимо</string>
+    <string name="valueoutofrange">»%1$s«за пределами жестких ограничений</string>
     <string name="smscommunicator_pumpconnectwithcode">Чтобы подсоединить помпу ответьте кодом %1$s</string>
     <string name="smscommunicator_pumpconnectfail">Ошибка подключения к помпе</string>
     <string name="smscommunicator_pumpdisconnectwithcode">Для разъединения с помпой на %1$d мин ответьте кодом %2$s</string>
@@ -270,11 +265,8 @@
     <string name="openapsma_autosensdata_label">данные autosens</string>
     <string name="openapsma_scriptdebugdata_label">отладка скрипта</string>
     <string name="openapsama_useautosens">Пользоваться функцией Autosens</string>
-    <string name="refresheventsfromnightscout">обновить данные из NS</string>
+    <string name="refresheventsfromnightscout">Обновить из NS</string>
     <string name="deletefuturetreatments">Удалить назначения из будущего</string>
-    <string name="eatingsoon">Ожидаемый прием пищи</string>
-    <string name="hypo">Гипо</string>
-    <string name="activity">Нагрузка</string>
     <string name="actions_shortname">ДЕЙСТВ</string>
     <string name="configbuilder_shortname">КОНФ</string>
     <string name="loop_shortname">ЗЦ</string>
@@ -282,7 +274,6 @@
     <string name="localprofile_shortname">ЛП</string>
     <string name="overview_shortname">НАЧАЛО</string>
     <string name="virtualpump_shortname">ВиртПомпа</string>
-    <string name="profileviewer_shortname">профильNS</string>
     <string name="treatments_shortname">НАЗНАЧ</string>
     <string name="objectives_shortname">ЦЕЛИ</string>
     <string name="wear_shortname">WEAR</string>
@@ -409,8 +400,6 @@
     <string name="xdripstatus_shortname">Статус xDrip</string>
     <string name="wear_showbgi_title">показать BGI</string>
     <string name="wear_showbgi_summary">добавить BGI в строку состояния</string>
-    <string name="ns_noupload">данные не передаются в NS</string>
-    <string name="ns_noupload_summary">данные передаваемые в NS не доходят. AAPS соединяется с NS но изменения туда не вносятся</string>
     <string name="overview_extendedbolus_cancel_button">Отмена удлиненного болюса</string>
     <string name="doprofileswitch">Переключить профиль</string>
     <string name="careportal_sensor_label">Сенсор</string>
@@ -425,7 +414,6 @@
     <string name="nsalarm_urgent_staledatavalue_label">Порог тревоги об устаревших данных [min] (мин)</string>
     <string name="openapsama_autosens_period">Интервал для autosens [h] (ч)</string>
     <string name="openapsama_autosens_period_summary">Время в часах в прошлом для определения чувствительности (время усвоения углеводов исключается)</string>
-    <string name="pump">помпа</string>
     <string name="openaps">OpenAPS</string>
     <string name="uploader">Загрузчик</string>
     <string name="configbuilder_sensitivity">определение чувствительности</string>
@@ -567,7 +555,6 @@
     <string name="category">Категория</string>
     <string name="subcategory">Подкатегория</string>
     <string name="bolusrecordedonly">Болюс будет только протоколироваться (не подаваться помпой)</string>
-    <string name="ns_autobackfill_summary">Заполнять пропущенные данные из NS</string>
     <string name="loop_smbsetbypump_label">Супер микро болюс SMB задан помпой</string>
     <string name="overview_show_activity">Нагрузка</string>
     <string name="overview_show_bgi">Влияние глюкозы</string>
@@ -634,7 +621,6 @@
     <string name="virtualpump_type">Тип виртуальной помпы</string>
     <string name="virtualpump_definition">Определение помпы</string>
     <string name="virtualpump_pump_def">Болюс: Шаг =%1$s\n Пролонгированный Болюс: [Шаг =%2$s, Продолжительность =%3$sмин -%4$sh] \nБазал: Шаг =%5$s\n ВБС: %6$s (на %7$s), Продолжительность =%8$sмин -%9$sh\n%10$s</string>
-    <string name="ns_autobackfill_title">Автозаполнение пропущенных данных СК</string>
     <string name="wear_wizard_settings">Параметры мастера настройки смарт-часов wear</string>
     <string name="wear_wizard_settings_summary">Расчеты, включены в результат мастера настройки смарт-часов wear:</string>
     <string name="wear_display_settings">Параметры экрана</string>
@@ -642,7 +628,6 @@
     <string name="enable_nsclient">Включить клиент NSClient</string>
     <string name="welcometosetupwizard">Добро пожаловать в мастер установки</string>
     <string name="readstatus">Статус \'чтение\'</string>
-    <string name="adjustprofileinns">Изменения должны быть сделано в Nightscout</string>
     <string name="exitwizard">Пропустить Мастер установки</string>
     <string name="setupwizard_loop_description">Нажмите на кнопку ниже, чтобы AndroidAPS мог предложить/внести изменения в базал</string>
     <string name="setupwizard_sensitivity_description">Плагин чувствительности Sensitivity применяется для определения чувствительности к инсулину и вычисления активных углеводов COB. Дополнительная информация:</string>
@@ -651,7 +636,6 @@
 Context | Edit Context</string>
     <string name="nsclientinfotext">NSClient обрабатывает подключения к Nightscout. Вы можете пропустить этот этап сейчас, но не преодолеете все Цели пока не настроите его.</string>
     <string name="diawarning">Напоминание: новые профили инсулина требуют как минимум 5 часов длительности действия DIA. 5-6 часовая DIA эквивалентна трехчасовой на старых профилях.</string>
-    <string name="setupwizard_profile_description">Пожалуйста выберите источник профиля. Если пациент ребенок пользуйтесь профилем Nightscout. Если никто не отслеживает ваш СК на NS, вы вероятно предпочтете Локальный профиль. Напоминание - вы всего лишь выбираете профиль. Активируйте его \"Переключателем профиля\"</string>
     <string name="setupwizard_aps_description">Выберите один из доступных алгоритмов. Они расположены от самых старых к самым новым. Более новый алгоритм обычно мощнее и агрессивнее. Если вы новый пользователь возможно вам лучше начать с помощника болюса AMA а не с новейшего алгоритма. Читайте документацию OpenAPS и определите свою конфигурацию.</string>
     <string name="setupwizard_pump_waiting_for_riley_link_connection">Сконфигурируйте RileyLink. После выбора RileyLink можно будет продолжить установку если состояние RileyLink \"Соединено\". Это может занять минуту.\n</string>
     <string name="setupwizard_pump_pump_not_initialized"><b>Примечание:</b> После инициализации помпы можно продолжить настройку\n</string>
@@ -754,7 +738,6 @@ Context | Edit Context</string>
     <string name="format_carbs_ic">%1$.0fg IC: %2$.1f</string>
     <string name="format_cob_ic">%1$.1fg IC: %2$.1f</string>
     <string name="format_percent">%1$d%%</string>
-    <string name="boluswizard">Мастер Болюса</string>
     <string name="unit_minute_short">мин</string>
     <string name="profile_name">Название профиля:</string>
     <string name="selected_profile">Выбрано:</string>
@@ -764,7 +747,6 @@ Context | Edit Context</string>
     <string name="objectives_button_unstart">Очистить начатые</string>
     <string name="doyouwantresetstart">Хотите сбросить начатую цель? Можете потерять уже достигнутое.</string>
     <string name="setupwizard_units_prompt">Выберите единицы, в которых вы хотите отображать значения</string>
-    <string name="ns_ploadlocalprofile">Перенести изменения локального профиля в NS</string>
     <string name="dia_short">Время действия инсулина DIA</string>
     <string name="ic_short">IC (инсулин/углеводы)</string>
     <string name="isf_short">ISF (чувствительность к инсулину)</string>
@@ -796,6 +778,7 @@ Context | Edit Context</string>
     <string name="randombg_short">BG/ГК</string>
     <string name="tools">Инструментарий</string>
     <string name="show_calculation">Показать расчет</string>
+    <string name="show_removed">Показать удаленные</string>
     <string name="clearqueueconfirm">Очистить очередь? Все данные в очереди будут потеряны!</string>
     <string name="ebstopsloop">Функция Пролонгированный Болюс остановит режим замкнутого цикла на время действия пролонгированного болюса. Подтверждаете выбор?</string>
     <string name="closed_loop_disabled_with_eb">Замкнутый цикл отключен из-за работы Пролонгированного Болюса</string>
@@ -903,4 +886,39 @@ Context | Edit Context</string>
     <string name="cannula">Катетер помпы</string>
     <string name="userentry">Запись пользователя</string>
     <string name="common_values">Введите максимальные значения вашего приема пищи \n</string>
+    <string name="summary_email_for_crash_report">Этот адрес электронной почты будет привязан к отчетам о сбоях, чтобы мы могли связаться с вами в экстренных случаях. Это опция.</string>
+    <string name="email_address">Адрес электронной почты</string>
+    <string name="privacy_settings">Настройки конфиденцальности</string>
+    <string name="privacy_summary">Вы можете указать дополнительно адрес электронной почты, если хотите получать уведомления о сбоях приложения; что является не автоматизированной рассылкой, а способом связи с разработчиками в опасных ситуациях.</string>
+    <string name="profile_low_target">Нижнее целевое значение профиля</string>
+    <string name="profile_high_target">Верхнее целевое значение профиля</string>
+    <string name="temp_target_low_target">Нижнее значение временного целевого уровня</string>
+    <string name="temp_target_high_target">Верхнее значение временного целевого уровня</string>
+    <string name="temp_target_value">Временное целевое значение</string>
+    <string name="profile_dia">Значение длительности действия инсулина DIA в профиле</string>
+    <string name="profile_sensitivity_value">Значение чувствительности в профиле</string>
+    <string name="profile_max_daily_basal_value">Максимальное значение базала в профиле</string>
+    <string name="current_basal_value">Текущее значение базала</string>
+    <string name="profile_carbs_ratio_value">Коэффициент углеводов в профиле</string>
+    <string name="full_sync">Полная синхронизация</string>
+    <string name="prime">Заполнение инфузионной системы</string>
+    <string name="ns_sync_options">Синхронизация</string>
+    <string name="ns_upload_summary">Профили, болюсы, углеводы, временные базалы закачиваются в NS</string>
+    <string name="ns_upload">Передать данные в NS</string>
+    <string name="ns_receive_profile_store">Принимать хранилище профилей</string>
+    <string name="ns_receive_profile_store_summary">Синхронизировать профили из редактора NS профиля в локальный профиль</string>
+    <string name="ns_receive_temp_target">Получить временные цели</string>
+    <string name="ns_receive_temp_target_summary">Принимать временные цели, установленные через NS или NSClient</string>
+    <string name="ns_receive_profile_switch">Получать переключения профиля</string>
+    <string name="ns_receive_profile_switch_summary">Принимать переключения профиля, введенные через NS или NSClient</string>
+    <string name="ns_receive_insulin">Принимать инсулин</string>
+    <string name="ns_receive_insulin_summary">Принимать инсулин, введенный через NS или NSClient (не подается, только рассчитывается как активный IOB)</string>
+    <string name="ns_receive_carbs">Принимать углеводы</string>
+    <string name="ns_receive_carbs_summary">Принимать углеводы, введенные через NS или NSClient</string>
+    <string name="ns_receive_therapy_events">Принимать события терапии</string>
+    <string name="ns_receive_therapy_events_summary">Принимать события терапии (катетер, инсулин, изменение батареи и т. д.) через NS или NSClient</string>
+    <string name="ns_receive_cgm">Получать/заполнять данные мониторинга CGM</string>
+    <string name="ns_receive_cgm_summary">Принимать данные мониторинга CGM из NS</string>
+    <string name="sms_timeout_while_wating">Таймаут во время ожидания окончания предыдущего соединения с помпой</string>
+    <string name="smscommunicator_another_bolus_in_queue">В очереди есть еще один болюс. Повторите попытку позже.</string>
 </resources>

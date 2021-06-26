@@ -11,7 +11,7 @@ import info.nightscout.androidaps.events.EventPumpStatusChanged
 import info.nightscout.androidaps.plugins.bus.RxBusWrapper
 import info.nightscout.androidaps.utils.FabricPrivacy
 import info.nightscout.androidaps.utils.alertDialogs.OKDialog
-import info.nightscout.androidaps.utils.extensions.hexStringToByteArray
+import info.nightscout.androidaps.extensions.hexStringToByteArray
 import info.nightscout.androidaps.utils.rx.AapsSchedulers
 import info.nightscout.androidaps.utils.sharedPreferences.SP
 import info.nightscout.androidaps.utils.textValidator.DefaultEditTextValidator
@@ -33,6 +33,7 @@ class EnterPinActivity : NoSplashAppCompatActivity() {
 
     private lateinit var binding: DanarsEnterPinActivityBinding
 
+    @kotlin.ExperimentalStdlibApi
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = DanarsEnterPinActivityBinding.inflate(layoutInflater)

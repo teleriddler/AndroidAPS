@@ -5,9 +5,9 @@ import dagger.android.HasAndroidInjector
 import info.nightscout.androidaps.TestBase
 import info.nightscout.androidaps.automation.R
 import info.nightscout.androidaps.data.PumpEnactResult
+import info.nightscout.androidaps.database.AppRepository
 import info.nightscout.androidaps.plugins.bus.RxBusWrapper
 import info.nightscout.androidaps.plugins.general.automation.elements.InputString
-import info.nightscout.androidaps.plugins.general.nsclient.NSUpload
 import info.nightscout.androidaps.queue.Callback
 import info.nightscout.androidaps.utils.resources.ResourceHelper
 import org.junit.Assert
@@ -22,12 +22,12 @@ import org.powermock.core.classloader.annotations.PrepareForTest
 import org.powermock.modules.junit4.PowerMockRunner
 
 @RunWith(PowerMockRunner::class)
-@PrepareForTest(NSUpload::class, RxBusWrapper::class)
+@PrepareForTest(RxBusWrapper::class)
 class ActionNotificationTest : TestBase() {
 
     @Mock lateinit var resourceHelper: ResourceHelper
     @Mock lateinit var rxBus: RxBusWrapper
-    @Mock lateinit var nsUpload: NSUpload
+    @Mock lateinit var repository: AppRepository
 
     private lateinit var sut: ActionNotification
     var injector: HasAndroidInjector = HasAndroidInjector {
@@ -35,10 +35,9 @@ class ActionNotificationTest : TestBase() {
             if (it is ActionNotification) {
                 it.resourceHelper = resourceHelper
                 it.rxBus = rxBus
-                it.nsUpload = nsUpload
+                it.repository = repository
             }
             if (it is PumpEnactResult) {
-                it.aapsLogger = aapsLogger
                 it.resourceHelper = resourceHelper
             }
         }
@@ -58,7 +57,7 @@ class ActionNotificationTest : TestBase() {
     }
 
     @Test fun shortDescriptionTest() {
-        sut.text = InputString(injector, "Asd")
+        sut.text = InputString("Asd")
         Assert.assertEquals("Notification: %s", sut.shortDescription())
     }
 
@@ -73,7 +72,7 @@ class ActionNotificationTest : TestBase() {
             }
         })
         Mockito.verify(rxBus, Mockito.times(2)).send(anyObject())
-        Mockito.verify(nsUpload, Mockito.times(1)).uploadError(anyObject())
+        //Mockito.verify(repository, Mockito.times(1)).runTransaction(any(Transaction::class.java))
     }
 
     @Test fun hasDialogTest() {
@@ -81,12 +80,12 @@ class ActionNotificationTest : TestBase() {
     }
 
     @Test fun toJSONTest() {
-        sut.text = InputString(injector, "Asd")
+        sut.text = InputString("Asd")
         Assert.assertEquals("{\"data\":{\"text\":\"Asd\"},\"type\":\"info.nightscout.androidaps.plugins.general.automation.actions.ActionNotification\"}", sut.toJSON())
     }
 
     @Test fun fromJSONTest() {
-        sut.text = InputString(injector, "Asd")
+        sut.text = InputString("Asd")
         sut.fromJSON("{\"text\":\"Asd\"}")
         Assert.assertEquals("Asd", sut.text.value)
     }

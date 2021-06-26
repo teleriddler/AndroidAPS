@@ -2,7 +2,6 @@
 <resources>
     <!--    <string name="fi_lang" translatable="false">Finnish</string> -->
     <!--   <string name="he_lang" translatable="false">Hebrew</string> -->
-    <!--    <string name="ga_lang" translatable="false">Irish</string> -->
     <!--    <string name="ja_lang" translatable="false">Japanese</string> -->
     <string name="treatmentssafety_title">Sicurezza trattamenti</string>
     <string name="treatmentssafety_maxbolus_title">Max bolo consentito [U]</string>
@@ -30,7 +29,6 @@
     <string name="description_overview">Visualizza lo stato corrente del tuo loop e i tasti per le azioni più comuni</string>
     <string name="description_persistent_notification">Mostra una notifica persistente con una breve panoramica di ciò che sta facendo il tuo loop</string>
     <string name="description_profile_local">Definisci un profilo che è disponibile offline.</string>
-    <string name="description_profile_nightscout">Fornisce il profilo che hai definito in Nightscout</string>
     <string name="description_pump_mdi">Per le persone in terapia multi-iniettiva</string>
     <string name="description_pump_virtual">Per microinfusori che non hanno ancora alcun driver (Loop aperto)</string>
     <string name="description_sensitivity_aaps">La sensibilità è calcolata allo stesso modo di Oref0, ma puoi specificare l\'intervallo di tempo al passato. L\'assorbimento minimo dei carboidrati è calcolato da \'max tempo assorbimento pasto\' nelle preferenze.</string>
@@ -78,14 +76,11 @@
     <string name="sms_delta">Delta:</string>
     <string name="configbuilder">Configuratore strutturale</string>
     <string name="overview">Panoramica</string>
-    <string name="nsprofile">Profilo NS</string>
     <string name="treatments">Trattamenti</string>
     <string name="virtualpump">Micro virtuale</string>
     <string name="careportal">Portale</string>
     <string name="configbuilder_pump">Micro</string>
     <string name="configbuilder_pump_description">Quale microinfusore desideri usare con AndroidAPS?</string>
-    <string name="configbuilder_treatments">Trattamenti</string>
-    <string name="configbuilder_treatments_description">Quale plugin dovrebbe essere usato per la gestione del trattamento?</string>
     <string name="configbuilder_profile">Profilo</string>
     <string name="configbuilder_profile_description">Quale profilo AndroidAPS dovrebbe usare?</string>
     <string name="configbuilder_aps">APS</string>
@@ -94,7 +89,6 @@
     <string name="configbuilder_general_description">Questi sono alcuni plugin generali che potresti trovare utili.</string>
     <string name="configbuilder_constraints_description">Quali vincoli sono applicati?</string>
     <string name="constraints">Vincoli</string>
-    <string name="loop">Loop</string>
     <string name="configbuilder_loop">Loop</string>
     <string name="configbuilder_loop_description">Usalo per attivare l\'integrazione del loop di AndroidAPS.</string>
     <string name="loop_aps_label">APS</string>
@@ -139,6 +133,7 @@
     <string name="configbuilder_nightscoutversion_label">Versione Nightscout:</string>
     <string name="missing_carbs">Mancanti %1$d g</string>
     <string name="exported">Preferenze esportate</string>
+    <string name="ue_exported">Voci utente esportate</string>
     <string name="export_to">Esportare impostazioni su</string>
     <string name="import_from">Importare impostazioni da</string>
     <string name="setting_imported">Impostazioni importate</string>
@@ -195,7 +190,7 @@
     <string name="smscommunicator_loophasbeenenabled">Il loop è stato abilitato</string>
     <string name="smscommunicator_loopisenabled">Il loop è abilitato</string>
     <string name="valuelimitedto">%1$.2f limitato a %2$.2f</string>
-    <string name="valueoutofrange">Il valore %1$s è fuori limite massimo</string>
+    <string name="valueoutofrange">»%1$s« è fuori dai limiti consentiti</string>
     <string name="smscommunicator_pumpconnectwithcode">Per connettere il micro rispondi col codice %1$s</string>
     <string name="smscommunicator_pumpconnectfail">Connessione al micro fallita</string>
     <string name="smscommunicator_pumpdisconnectwithcode">Per disconnettere il micro per %1$d minuti rispondi col codice %2$s</string>
@@ -270,11 +265,8 @@
     <string name="openapsma_autosensdata_label">Dati autosens</string>
     <string name="openapsma_scriptdebugdata_label">Script debug</string>
     <string name="openapsama_useautosens">Usa la funzione Autosens</string>
-    <string name="refresheventsfromnightscout">Aggiorna eventi da NS</string>
+    <string name="refresheventsfromnightscout">Aggiornamento da NS</string>
     <string name="deletefuturetreatments">Elimina trattamenti nel futuro</string>
-    <string name="eatingsoon">Pasto a breve</string>
-    <string name="hypo">Ipoglicemia</string>
-    <string name="activity">Attività fisica</string>
     <string name="actions_shortname">AZN</string>
     <string name="configbuilder_shortname">CONF</string>
     <string name="loop_shortname">LOOP</string>
@@ -282,7 +274,6 @@
     <string name="localprofile_shortname">PL</string>
     <string name="overview_shortname">HOME</string>
     <string name="virtualpump_shortname">MICROV</string>
-    <string name="profileviewer_shortname">PROFILONS</string>
     <string name="treatments_shortname">TRATT</string>
     <string name="objectives_shortname">OBT</string>
     <string name="wear_shortname">SMWA</string>
@@ -409,8 +400,6 @@
     <string name="xdripstatus_shortname">xds</string>
     <string name="wear_showbgi_title">Mostra BGI</string>
     <string name="wear_showbgi_summary">Aggiungi BGI alla statusline</string>
-    <string name="ns_noupload">Nessun caricamento in NS</string>
-    <string name="ns_noupload_summary">Tutti i dati inviati a NS vengono rifiutati. AAPS è connesso a NS, ma non vengono apportate modifiche</string>
     <string name="overview_extendedbolus_cancel_button">Cancella bolo esteso</string>
     <string name="doprofileswitch">Cambia profilo</string>
     <string name="careportal_sensor_label">Sensore</string>
@@ -425,7 +414,6 @@
     <string name="nsalarm_urgent_staledatavalue_label">Soglia dati non aggiornati da molto tempo [min]</string>
     <string name="openapsama_autosens_period">Intervallo per autosens [h]</string>
     <string name="openapsama_autosens_period_summary">Quantità di ore al passato per il rilevamento della sensibilità (il tempo di assorbimento dei carboidrati è escluso)</string>
-    <string name="pump">Micro</string>
     <string name="openaps">OpenAPS</string>
     <string name="uploader">Uploader</string>
     <string name="configbuilder_sensitivity">Rilevamento sensibilità</string>
@@ -567,7 +555,6 @@
     <string name="category">Categoria</string>
     <string name="subcategory">Sottocategoria</string>
     <string name="bolusrecordedonly">Il bolo sarà solo registrato (non erogato dal micro)</string>
-    <string name="ns_autobackfill_summary">Riempimento automatico glicemie mancanti da NS</string>
     <string name="loop_smbsetbypump_label">SMB impostato dal micro</string>
     <string name="overview_show_activity">Attività</string>
     <string name="overview_show_bgi">Impatto glicemia (BGI)</string>
@@ -634,7 +621,6 @@
     <string name="virtualpump_type">Tipo micro virtuale</string>
     <string name="virtualpump_definition">Definizione micro</string>
     <string name="virtualpump_pump_def">Bolo: Step=%1$s\nBolo Esteso: [Step=%2$s, Durata=%3$smin-%4$sh]\nBasale: Step=%5$s\nTBR: %6$s (di %7$s), Durata=%8$smin-%9$sh\n%10$s</string>
-    <string name="ns_autobackfill_title">Riempimento automatico BG</string>
     <string name="wear_wizard_settings">Impostazioni Calcolatore</string>
     <string name="wear_wizard_settings_summary">Calcoli inclusi nel risultato del Calcolatore:</string>
     <string name="wear_display_settings">Impostazioni di visualizzazione</string>
@@ -642,14 +628,12 @@
     <string name="enable_nsclient">Abilita NSClient</string>
     <string name="welcometosetupwizard">Benvenuto nella configurazione guidata. Ti seguirò durante tutto il processo.\n</string>
     <string name="readstatus">Lettura stato</string>
-    <string name="adjustprofileinns">Le modifiche devono essere fatte in NS</string>
     <string name="exitwizard">Salta configurazione guidata</string>
     <string name="setupwizard_loop_description">Premi il tasto in basso per permettere ad AndroidAPS di proporre/fare modifiche alla basale</string>
     <string name="setupwizard_sensitivity_description">Il plugin di sensibilità è usato per il rilevamento della sensibilità all\'insulina e il calcolo di COB. Per ulteriori informazioni visita:</string>
     <string name="setupwizard_sensitivity_url">https://github.com/MilosKozak/AndroidAPS/wiki/Sensitivity-detection-and-COB</string>
     <string name="nsclientinfotext">NSClient gestisce la connessione a Nightscout. Puoi saltare questa parte ora, ma non sarai in grado di superare gli obiettivi fino a quando non ne porterai a termine la configurazione.</string>
     <string name="diawarning">Ricorda: i nuovi profili di insulina richiedono una DIA di almeno 5h. DIA di 5-6h sui nuovi profili sono uguali a DIA di 3h sui vecchi profili di insulina.</string>
-    <string name="setupwizard_profile_description">Seleziona il tipo di profilo. Se il paziente è un bambino dovresti usare il profilo NS. Se non c\'è nessuno a seguirti su Nightscout probabilmente preferirai il profilo locale. Ricorda che stai solo selezionando la sorgente del profilo. Per usarlo devi attivarlo tramite l\'esecuzione del comando \"Cambio profilo\"</string>
     <string name="setupwizard_aps_description">Seleziona uno degli algoritmi disponibili. Sono ordinati dal più vecchio al più recente. L\'algoritmo più recente è solitamente più potente e più aggressivo. Pertanto, se sei un nuovo utente, probabilmente dovresti iniziare con AMA e non con l\'ultimo. Non dimenticare di leggere la documentazione di OpenAPS e di configurarlo prima dell\'uso.</string>
     <string name="setupwizard_pump_waiting_for_riley_link_connection">Configura il RileyLink di seguito. Dopo aver selezionato un RileyLink, sarà possibile continuare la configurazione una volta che lo stato del RileyLink sarà \"Connesso\". Questo potrebbe richiedere un minuto.\n</string>
     <string name="setupwizard_pump_pump_not_initialized"><b>Nota:</b> Puoi continuare la configurazione una volta che il micro è stato configurato.\n</string>
@@ -752,7 +736,6 @@
     <string name="format_carbs_ic">%1$.0fg IC: %2$.1f</string>
     <string name="format_cob_ic">%1$.1fg IC: %2$.1f</string>
     <string name="format_percent">%1$d%%</string>
-    <string name="boluswizard">Calcolatore</string>
     <string name="unit_minute_short">min</string>
     <string name="profile_name">Nome profilo:</string>
     <string name="selected_profile">Selezionato:</string>
@@ -762,7 +745,6 @@
     <string name="objectives_button_unstart">Cancella avvio</string>
     <string name="doyouwantresetstart">Vuoi resettare l\'avvio dell\'obiettivo? Potresti perdere i tuoi progressi.</string>
     <string name="setupwizard_units_prompt">Seleziona le unità in cui vuoi visualizzare i valori</string>
-    <string name="ns_ploadlocalprofile">Carica modifiche al profilo locale in NS</string>
     <string name="dia_short">DIA</string>
     <string name="ic_short">IC</string>
     <string name="isf_short">ISF</string>
@@ -794,6 +776,7 @@
     <string name="randombg_short">BG</string>
     <string name="tools">Strumenti</string>
     <string name="show_calculation">Mostra calcolo</string>
+    <string name="show_removed">Mostra rimossi</string>
     <string name="clearqueueconfirm">Cancellare la coda? Tutti i dati in coda andranno persi!</string>
     <string name="ebstopsloop">L\'uso della funzione bolo esteso interromperà la modalità loop chiuso per il tempo di esecuzione del bolo esteso. Lo vuoi davvero?</string>
     <string name="closed_loop_disabled_with_eb">Loop chiuso disabilitato a causa dell\'esecuzione di un bolo esteso</string>
@@ -905,4 +888,37 @@
     <string name="email_address">Indirizzo email</string>
     <string name="privacy_settings">Impostazioni privacy</string>
     <string name="privacy_summary">Puoi fornire un indirizzo e-mail opzionale se desideri essere avvisato in caso di arresti anomali dell\'app. Questo non è un servizio automatizzato. Sarai contattato dagli sviluppatori in situazioni pericolose.</string>
+    <string name="profile_low_target">Target basso (profilo)</string>
+    <string name="profile_high_target">Target alto (profilo)</string>
+    <string name="temp_target_low_target">Valore inferiore target temporaneo</string>
+    <string name="temp_target_high_target">Valore superiore target temporaneo</string>
+    <string name="temp_target_value">Valore target temporaneo</string>
+    <string name="profile_dia">Valore DIA (profilo)</string>
+    <string name="profile_sensitivity_value">Valore sensibilità (profilo)</string>
+    <string name="profile_max_daily_basal_value">Valore max basale (profilo)</string>
+    <string name="current_basal_value">Valore basale corrente</string>
+    <string name="profile_carbs_ratio_value">Valore rapporto CHO (profilo)</string>
+    <string name="full_sync">Sincronizzazione completa</string>
+    <string name="prime">Caricamento</string>
+    <string name="ns_sync_options">Sincronizzazione</string>
+    <string name="ns_upload_summary">Profili, boli, CHO, basali temporanee vengono caricati su NS</string>
+    <string name="ns_upload">Carica dati su NS</string>
+    <string name="ns_receive_profile_store">Ricevi \"store\" profilo</string>
+    <string name="ns_receive_profile_store_summary">Sincronizza i profili da NS al profilo locale</string>
+    <string name="ns_receive_temp_target">Ricevi target temporanei</string>
+    <string name="ns_receive_temp_target_summary">Accetta target temporanei inseriti tramite NS o NSClient</string>
+    <string name="ns_receive_profile_switch">Ricevi cambi profilo</string>
+    <string name="ns_receive_profile_switch_summary">Accetta cambi profilo inseriti tramite NS o NSClient</string>
+    <string name="ns_receive_offline_event">Ricevi eventi APS offline</string>
+    <string name="ns_receive_offline_event_summary">Accetta eventi APS offline inseriti tramite NS o NSClient</string>
+    <string name="ns_receive_insulin">Ricevi insulina</string>
+    <string name="ns_receive_insulin_summary">Accetta insulina inserita tramite NS o NSClient (non viene erogata, solo calcolata per IOB)</string>
+    <string name="ns_receive_carbs">Ricevi CHO</string>
+    <string name="ns_receive_carbs_summary">Accetta CHO inseriti tramite NS o NSClient</string>
+    <string name="ns_receive_therapy_events">Ricevi eventi terapia</string>
+    <string name="ns_receive_therapy_events_summary">Accetta eventi terapia (cambio cannula, insulina, batteria, ecc.) inseriti tramite NS o NSClient</string>
+    <string name="ns_receive_cgm">Ricevi/riempi dati CGM</string>
+    <string name="ns_receive_cgm_summary">Accetta dati CGM da NS</string>
+    <string name="sms_timeout_while_wating">Timeout nell\'attesa della fine della precedente comunicazione col micro.</string>
+    <string name="smscommunicator_another_bolus_in_queue">C\'è un altro bolo in coda. Riprova più tardi.</string>
 </resources>

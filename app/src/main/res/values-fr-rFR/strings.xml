@@ -2,7 +2,6 @@
 <resources>
     <!--    <string name="fi_lang" translatable="false">Finnish</string> -->
     <!--   <string name="he_lang" translatable="false">Hebrew</string> -->
-    <!--    <string name="ga_lang" translatable="false">Irish</string> -->
     <!--    <string name="ja_lang" translatable="false">Japanese</string> -->
     <string name="treatmentssafety_title">Traitements de sécurité</string>
     <string name="treatmentssafety_maxbolus_title">Maximum Bolus autorisé [U]</string>
@@ -30,7 +29,6 @@
     <string name="description_overview">Affiche l’état actuel de votre Boucle et des boutons d’actions les plus courantes</string>
     <string name="description_persistent_notification">Affiche une notification en cours avec un bref aperçu de ce que fait votre Boucle</string>
     <string name="description_profile_local">Définissez un profil qui est disponible hors ligne.</string>
-    <string name="description_profile_nightscout">Fournit le profil que vous avez défini dans Nightscout</string>
     <string name="description_pump_mdi">Intégration pompe pour les personnes qui font des injections quotidiennes multiples pour le traitement de leur diabète</string>
     <string name="description_pump_virtual">Intégration pour les pompes qui n’ont pas encore de pilote (Boucle Ouverte)</string>
     <string name="description_sensitivity_aaps">La sensibilité est calculée de la même manière que Oref0, mais vous pouvez spécifier la période concernée. L\'absorption minimale des glucides est calculée à partir des temps d’absorption max des glucides du menu préférences.</string>
@@ -76,16 +74,13 @@
     <string name="openapsma_request_label">Requête</string>
     <string name="delta">Delta</string>
     <string name="sms_delta">Delta:</string>
-    <string name="configbuilder">Générateur de configuration</string>
+    <string name="configbuilder">Configuration</string>
     <string name="overview">Aperçu</string>
-    <string name="nsprofile">Profil NS</string>
     <string name="treatments">Traitements</string>
     <string name="virtualpump">Pompe virtuelle</string>
     <string name="careportal">Careportal</string>
     <string name="configbuilder_pump">Pompe</string>
     <string name="configbuilder_pump_description">Quelle pompe souhaitez-vous utiliser avec AndroidAPS ?</string>
-    <string name="configbuilder_treatments">Traitements</string>
-    <string name="configbuilder_treatments_description">Quel plugin doit être utilisé pour la gestion des traitements ?</string>
     <string name="configbuilder_profile">Profil</string>
     <string name="configbuilder_profile_description">Quel profil doit utiliser AndroidAPS ?</string>
     <string name="configbuilder_aps">APS</string>
@@ -94,13 +89,12 @@
     <string name="configbuilder_general_description">Quelques modules d\'extension que vous pourriez trouver utiles.</string>
     <string name="configbuilder_constraints_description">Quelles restrictions sont appliquées ?</string>
     <string name="constraints">Restrictions</string>
-    <string name="loop">Boucle</string>
     <string name="configbuilder_loop">Boucle</string>
     <string name="configbuilder_loop_description">Veuillez utiliser cela pour activer la Boucle d\'AndroidAPS.</string>
     <string name="loop_aps_label">APS</string>
     <string name="loop_constraintsprocessed_label">Après traitement des restrictions</string>
     <string name="loop_tbrsetbypump_label">Basal temporaire défini par la pompe</string>
-    <string name="noapsselected">Pas d\'APS séléctionné ou pas de résultat fourni</string>
+    <string name="noapsselected">Pas d\'APS sélectionné ou pas de résultat fourni</string>
     <string name="safety">Sécurité</string>
     <string name="openapsma_disabled">Plugin désactivé</string>
     <string name="constraints_violation">Violation des restrictions</string>
@@ -139,6 +133,7 @@
     <string name="configbuilder_nightscoutversion_label">Version Nightscout :</string>
     <string name="missing_carbs">%1$d g manquants</string>
     <string name="exported">Préférences exportées</string>
+    <string name="ue_exported">Entrées utilisateur exportées</string>
     <string name="export_to">Exporter les paramètres au</string>
     <string name="import_from">Importer les paramètres depuis</string>
     <string name="setting_imported">Paramètres importés</string>
@@ -196,7 +191,7 @@ L\'ENSEMBLE DES RISQUES LIÉS À LA QUALITÉ ET À LA PERFORMANCE DU PROGRAMME S
     <string name="smscommunicator_loophasbeenenabled">La Boucle a été activée</string>
     <string name="smscommunicator_loopisenabled">La Boucle est activée</string>
     <string name="valuelimitedto">%1$.2f limité à %2$.2f</string>
-    <string name="valueoutofrange">La valeur %1$s est en dehors des limites</string>
+    <string name="valueoutofrange">\"%1$s\" est en dehors des limites</string>
     <string name="smscommunicator_pumpconnectwithcode">Pour connecter la pompe, renvoyez le code %1$s</string>
     <string name="smscommunicator_pumpconnectfail">Echec de la connexion pompe</string>
     <string name="smscommunicator_pumpdisconnectwithcode">Pour déconnecter la pompe pendant %1$d min, renvoyez le code %2$s</string>
@@ -213,7 +208,7 @@ L\'ENSEMBLE DES RISQUES LIÉS À LA QUALITÉ ET À LA PERFORMANCE DU PROGRAMME S
     <string name="smscommunicator_loopresumereplywithcode">Pour reprendre la boucle, renvoyez le code %1$s</string>
     <string name="smscommunicator_loopenablereplywithcode">Pour activer la boucle, renvoyez le code %1$s</string>
     <string name="smscommunicator_loopdisablereplywithcode">Pour désactiver la boucle, renvoyez le code %1$s</string>
-    <string name="smscommunicator_tempbasalset">Démarrage réussi pour %1$.2fU/h de basal temporaire pour %2$d min</string>
+    <string name="smscommunicator_tempbasalset">Démarrage réussi pour %1$.2fU/h de basal temp pour %2$d min</string>
     <string name="smscommunicator_extendedset">Le Bolus étendu %1$.2fU pendant %2$d min a commencé avec succès</string>
     <string name="smscommunicator_carbsset">%1$d  g de glucides entrés avec succès</string>
     <string name="smscommunicator_carbsfailed">L\'entrée de %1$dg de glucides a échoué</string>
@@ -271,11 +266,8 @@ L\'ENSEMBLE DES RISQUES LIÉS À LA QUALITÉ ET À LA PERFORMANCE DU PROGRAMME S
     <string name="openapsma_autosensdata_label">Données Autosens</string>
     <string name="openapsma_scriptdebugdata_label">Débogage du Script</string>
     <string name="openapsama_useautosens">Utiliser la fonction Autosens</string>
-    <string name="refresheventsfromnightscout">Actualiser les événements depuis NS</string>
+    <string name="refresheventsfromnightscout">Actualiser depuis NS</string>
     <string name="deletefuturetreatments">Supprimer les futurs traitements</string>
-    <string name="eatingsoon">Repas imminent</string>
-    <string name="hypo">Hypo</string>
-    <string name="activity">Activité</string>
     <string name="actions_shortname">ACT</string>
     <string name="configbuilder_shortname">CONF</string>
     <string name="loop_shortname">BOUCLE</string>
@@ -283,7 +275,6 @@ L\'ENSEMBLE DES RISQUES LIÉS À LA QUALITÉ ET À LA PERFORMANCE DU PROGRAMME S
     <string name="localprofile_shortname">PL</string>
     <string name="overview_shortname">ACCUEIL</string>
     <string name="virtualpump_shortname">POMPEV</string>
-    <string name="profileviewer_shortname">P.NS</string>
     <string name="treatments_shortname">TRAIT</string>
     <string name="objectives_shortname">OBJ</string>
     <string name="wear_shortname">WEAR</string>
@@ -294,7 +285,7 @@ L\'ENSEMBLE DES RISQUES LIÉS À LA QUALITÉ ET À LA PERFORMANCE DU PROGRAMME S
     <string name="profile">Profil</string>
     <string name="openapsama_max_daily_safety_multiplier_summary">Valeur par défaut : 3 Ceci est un paramètre important de sécurité de l’OpenAPS. Ceci va limiter vos débits basal à 3 fois votre débit Basal maximum. Il est probable que vous n’aurez pas besoin de changer cela, mais vous devez être conscient de ce qui est discuté pour les limites de sécurité dans “3x max daily; 4x current”.</string>
     <string name="openapsama_current_basal_safety_multiplier_summary">Valeur par défaut : 4 Ceci est l’autre moitié des paramètres de sécurité limitant l’OpenAPS, et l’autre moitié de “3x max daily, 4x current” des paramètres de sécurité. Quel que soit le basal maximum prédéfini dans votre pompe, il ne pourra pas être plus haut que ce nombre multiplié par le Basal actuel. Ceci est fait pour ne pas mettre l’utilisateur en danger en programmant des débits Basal maximum trop élevés avant de comprendre comment l’algorithme fonctionne. Encore une fois, la valeur par défaut est 4x, la plupart des gens n’auront jamais besoin d’ajuster ce paramètre, plutôt ils auront tendance à ajuster d’autres paramètres s’ils voient qu’ils atteignent ce paramètre de limite de sécurité.</string>
-    <string name="openapsama_autosens_max_summary">Valeur par défaut: 1.2\nCeci est la limite du multiplicateur utilisé par Autosens (et bientôt Autotune) pour définir +20%% en limite maximale du ratio Autosens. En consequence, ceci dit va définir la valeur maximale du Basal pour Autosens, la valeur minimale de la Sensibilité à l\'Insuline (SI, ISF), et la valeur minimale de la cible glycémique.</string>
+    <string name="openapsama_autosens_max_summary">Valeur par défaut: 1.2\nCeci est la limite du multiplicateur utilisé par Autosens (et bientôt Autotune) pour définir +20% en limite maximale du ratio Autosens. En consequence, ceci va définir la valeur maximale du Basal pour Autosens, la valeur minimale de la Sensibilité à l\'Insuline (SI), et la valeur minimale de la cible glycémique.</string>
     <string name="openapsama_autosens_min_summary">Valeur par défaut: 0,7\nL\'autre volet des limites de sécurité de l\'autosens, c\'est de définir une limite basse sur l\'ajustement des débits de basal et une limite haute sur l\'ajustement de la SI et des cibles GLY effectués par l\'autosens.</string>
     <string name="openapsama_autosens_adjusttargets">Autosens ajuste aussi les cibles</string>
     <string name="openapsama_autosens_adjusttargets_summary">Valeur par défaut : true\nCeci est utilisé pour autoriser Autosens à ajuster les cibles de glycémie en plus de SI et les basals.</string>
@@ -410,8 +401,6 @@ L\'ENSEMBLE DES RISQUES LIÉS À LA QUALITÉ ET À LA PERFORMANCE DU PROGRAMME S
     <string name="xdripstatus_shortname">xds</string>
     <string name="wear_showbgi_title">Afficher l’Impact Glycémie</string>
     <string name="wear_showbgi_summary">Ajouter l’IGly sur la vue générale</string>
-    <string name="ns_noupload">Pas de téléchargement vers NS</string>
-    <string name="ns_noupload_summary">Toutes les données envoyées à NS sont abandonnées. AAPS est connecté à NS mais aucun changement n’est fait dans NS</string>
     <string name="overview_extendedbolus_cancel_button">Annuler Bolus étendu</string>
     <string name="doprofileswitch">Changer de profil</string>
     <string name="careportal_sensor_label">Capteur</string>
@@ -426,7 +415,6 @@ L\'ENSEMBLE DES RISQUES LIÉS À LA QUALITÉ ET À LA PERFORMANCE DU PROGRAMME S
     <string name="nsalarm_urgent_staledatavalue_label">Seuil d\'urgence pour les données obsolètes [min]</string>
     <string name="openapsama_autosens_period">Plage pour Autosens [h]</string>
     <string name="openapsama_autosens_period_summary">Le nombre d’heures écoulées pour l\'estimation de Sensibilité (le temps d’absorption des glucides est exclu)</string>
-    <string name="pump">Pompe</string>
     <string name="openaps">OpenAPS</string>
     <string name="uploader">Logiciel pour télécharger vers Internet</string>
     <string name="configbuilder_sensitivity">Estimation de Sensibilité</string>
@@ -533,7 +521,7 @@ L\'ENSEMBLE DES RISQUES LIÉS À LA QUALITÉ ET À LA PERFORMANCE DU PROGRAMME S
     <string name="enablesmbwithcob_summary">Activer SMB tant que des Glucides sont actifs.</string>
     <string name="enablesmbwithtemptarget">Activer SMB avec les cibles temporaires</string>
     <string name="enablesmbwithtemptarget_summary">Activer SMB lorsqu\'il y a une cible temporaire active (repas imminent, exercise)</string>
-    <string name="enablesmbwithhightemptarget">Activer SMB avec cibles temp. hautes</string>
+    <string name="enablesmbwithhightemptarget">Activer SMB avec cibles temp hautes</string>
     <string name="enablesmbwithhightemptarget_summary">Activer les SMB quand il y a une cible temp haute active (exercise, au dessus de 100 mg/dl ou 5.5 mmol/l)</string>
     <string name="overview_insulin_label">Insuline</string>
     <string name="overview_buttons_selection">Boutons</string>
@@ -568,7 +556,6 @@ L\'ENSEMBLE DES RISQUES LIÉS À LA QUALITÉ ET À LA PERFORMANCE DU PROGRAMME S
     <string name="category">Catégorie</string>
     <string name="subcategory">Sous-catégorie</string>
     <string name="bolusrecordedonly">Les bolus seront seulement enregistrés (pas délivrés par la pompe)</string>
-    <string name="ns_autobackfill_summary">Remplissage automatique des glycémies manquantes en utilisant NS</string>
     <string name="loop_smbsetbypump_label">SMB défini par la pompe</string>
     <string name="overview_show_activity">Activité</string>
     <string name="overview_show_bgi">Impact glycémique</string>
@@ -635,7 +622,6 @@ L\'ENSEMBLE DES RISQUES LIÉS À LA QUALITÉ ET À LA PERFORMANCE DU PROGRAMME S
     <string name="virtualpump_type">Type de pompe virtuelle</string>
     <string name="virtualpump_definition">Définition de pompe</string>
     <string name="virtualpump_pump_def">Bolus : Étape =%1$s\nExtended Bolus : [Étape =%2$s, Durée =%3$smin -%4$sh]\nBasal : Étape =%5$s\nTBR : %6$s (par %7$s), Durée =%8$smin -%9$sh\n%10$s</string>
-    <string name="ns_autobackfill_title">Remplissage automatique G</string>
     <string name="wear_wizard_settings">Paramètres assistant</string>
     <string name="wear_wizard_settings_summary">Calculs inclus dans le résultat de l’Assistant :</string>
     <string name="wear_display_settings">Parametres d\'affichage</string>
@@ -643,14 +629,12 @@ L\'ENSEMBLE DES RISQUES LIÉS À LA QUALITÉ ET À LA PERFORMANCE DU PROGRAMME S
     <string name="enable_nsclient">Activer NSClient</string>
     <string name="welcometosetupwizard">Bienvenue à l\'assistant de configuration. Je vais vous guider à travers le processus de configuration\n</string>
     <string name="readstatus">Statut de lecture</string>
-    <string name="adjustprofileinns">Des modifications doivent être effectuées dans NS</string>
-    <string name="exitwizard">Passer l\'Assistant de configuration</string>
+    <string name="exitwizard">Ignorer l\'assistant de configuration</string>
     <string name="setupwizard_loop_description">Appuyez sur le bouton ci-dessous pour autoriser AndroidAPS à suggérer/faire des changements de basal</string>
     <string name="setupwizard_sensitivity_description">Le plugin de Sensibilité est utilisé pour la détection de la Sensibilité et de calcul de glucides actifs. Pour plus d’informations visitez :</string>
     <string name="setupwizard_sensitivity_url">https://github.com/MilosKozak/AndroidAPS/wiki/Sensitivity-detection-and-COB</string>
     <string name="nsclientinfotext">Le NSClient gère la connexion avec Nightscout. Vous pouvez sauter cette étape maintenant mais vous ne pourrez pas terminer les objectifs sans cette configuration.</string>
     <string name="diawarning">Rappel : les nouveaux profils d\'insuline requièrent une DIA d\'au moins 5h. Une DIA 5-6h dans les nouveaux profils d\'insuline équivaut à une DIA 3h dans les anciens profils d\'insuline.</string>
-    <string name="setupwizard_profile_description">Sélectionnez la source du profil. Si le patient est un enfant vous devriez utiliser un profil NS. Si personne ne vous suit sur Nightscout, vous préférerez probablement un profil local. N\'oubliez pas que vous êtes simplement en train de sélectionner la source du profil. Afin de pouvoir l\'utiliser vous devrez l\'activer via \"Changement de Profil\"</string>
     <string name="setupwizard_aps_description">Sélectionnez un des algorithmes disponibles. Ils sont organisés du plus ancien au plus récent. Les algorithmes les plus récents sont habituellement plus puissants et plus agressifs. De ce fait, si vous êtes un nouvel utilisateur, vous devriez probablement démarrer avec AMA au lieu de choisir un algorithme plus récent. N\'oubliez pas de lire la documentation OpenAPS et en faire la configuration avant utilisation.</string>
     <string name="setupwizard_pump_waiting_for_riley_link_connection">Veuillez configurer votre RileyLink ci-dessous. Après avoir sélectionné un RileyLink, il sera possible de continuer l\'installation une fois que le statut de RileyLink sera « Connecté ». Cela peut prendre une minute.\n</string>
     <string name="setupwizard_pump_pump_not_initialized"><b>Remarque :</b> Vous pouvez continuer l\'installation une fois la pompe configurée.\n</string>
@@ -746,14 +730,13 @@ L\'ENSEMBLE DES RISQUES LIÉS À LA QUALITÉ ET À LA PERFORMANCE DU PROGRAMME S
     <string name="slowabsorptiondetected"><![CDATA[<font color=\'%1$s\'>!!!!! Absorption lente des glucides détectée : %2$d%% du temps. Vérifiez de nouveau votre calcul. Les GA (Glucides Actifs) peuvent être surestimés et alors plus d\'insuline pourrait être délivré !!!!!</font>]]></string>
     <string name="partialboluswizard">Injecter cette partie de Bolus calculée par l’assistant [%]</string>
     <string name="deliverpartofboluswizard">L\'assistant Bolus effectue le calcul mais seulement cette partie de l\'insuline calculée est délivrée. Utile avec l\'algorithme SMB.</string>
-    <string name="snooze">Report alarme</string>
+    <string name="snooze">Masquer</string>
     <string name="increasingmaxbasal">Augmentation de la valeur du débit Basal max parce que ce paramètre est inférieur au débit Basal max de votre profil</string>
     <string name="smscommunicator_messagebody">Message invalide</string>
     <string name="format_bg_isf">%1$s SI: %2$.1f</string>
     <string name="format_carbs_ic">%1$.0fg G/I: %2$.1f</string>
     <string name="format_cob_ic">%1$.1fg G/I: %2$.1f</string>
     <string name="format_percent">%1$d%%</string>
-    <string name="boluswizard">Assistant Bolus</string>
     <string name="unit_minute_short">min</string>
     <string name="profile_name">Nom du profil :</string>
     <string name="selected_profile">Sélectionné :</string>
@@ -763,7 +746,6 @@ L\'ENSEMBLE DES RISQUES LIÉS À LA QUALITÉ ET À LA PERFORMANCE DU PROGRAMME S
     <string name="objectives_button_unstart">Suppression démarrée</string>
     <string name="doyouwantresetstart">Voulez-vous réinitialiser le début de l\'objectif ? Vous risquez de perdre vos progrès.</string>
     <string name="setupwizard_units_prompt">Sélectionnez les unités dans lesquelles vous souhaitez afficher les valeurs</string>
-    <string name="ns_ploadlocalprofile">Remonter les modifications de profil local dans NS</string>
     <string name="dia_short">DAI</string>
     <string name="ic_short">G/I</string>
     <string name="isf_short">SI</string>
@@ -795,6 +777,7 @@ L\'ENSEMBLE DES RISQUES LIÉS À LA QUALITÉ ET À LA PERFORMANCE DU PROGRAMME S
     <string name="randombg_short">Gly</string>
     <string name="tools">Outils</string>
     <string name="show_calculation">Afficher le calcul</string>
+    <string name="show_removed">Afficher les éléments supprimés</string>
     <string name="clearqueueconfirm">Effacer la queue ? Toutes les données en attente seront perdues !</string>
     <string name="ebstopsloop">L\'utilisation du bolus étendu arrètera la boucle fermée pour la durée d\'exécution du bolus étendu. Voulez-vous vraiment le faire ?</string>
     <string name="closed_loop_disabled_with_eb">Boucle fermée désactivée à cause du bolus étendu</string>
@@ -906,4 +889,37 @@ L\'ENSEMBLE DES RISQUES LIÉS À LA QUALITÉ ET À LA PERFORMANCE DU PROGRAMME S
     <string name="email_address">Adresse e-mail</string>
     <string name="privacy_settings">Paramètres de confidentialité</string>
     <string name="privacy_summary">Vous pouvez fournir une adresse e-mail facultative si vous voulez être informé des plantages de l\'application. Ce n\'est pas un service automatisé. Vous serez contacté par les développeurs dans des situations dangereuses.</string>
+    <string name="profile_low_target">Cible basse du profil</string>
+    <string name="profile_high_target">Cible haute du profil</string>
+    <string name="temp_target_low_target">Valeur basse de cible temporaire</string>
+    <string name="temp_target_high_target">Valeur haute de cible temporaire</string>
+    <string name="temp_target_value">Valeur de cible temporaire</string>
+    <string name="profile_dia">Valeur DAI du profil</string>
+    <string name="profile_sensitivity_value">Valeur de sensibilité du profil</string>
+    <string name="profile_max_daily_basal_value">Basale maximale du profil</string>
+    <string name="current_basal_value">Basale actuelle</string>
+    <string name="profile_carbs_ratio_value">Rapport glucides/insuline de profil</string>
+    <string name="full_sync">Synchro. complète</string>
+    <string name="prime">Amorcer</string>
+    <string name="ns_sync_options">Synchronisation</string>
+    <string name="ns_upload_summary">Profils, boluses, glucides, basals temporaires sont téléchargés vers NS</string>
+    <string name="ns_upload">Télécharger des données vers NS</string>
+    <string name="ns_receive_profile_store">Recevoir les profils sauvegardés</string>
+    <string name="ns_receive_profile_store_summary">Synchroniser les profils à partir de l\'éditeur de profil NS vers le profil local</string>
+    <string name="ns_receive_temp_target">Recevoir les cibles temporaires</string>
+    <string name="ns_receive_temp_target_summary">Accepter les cibles temporaires entrées via NS ou NSClient</string>
+    <string name="ns_receive_profile_switch">Recevoir les changements de profil</string>
+    <string name="ns_receive_profile_switch_summary">Accepter les changements de profil entrés via NS ou NSClient</string>
+    <string name="ns_receive_offline_event">Recevoir les événements APS hors ligne</string>
+    <string name="ns_receive_offline_event_summary">Accepter les événements APS hors ligne entrés via NS ou NSClient</string>
+    <string name="ns_receive_insulin">Recevoir l\'insuline</string>
+    <string name="ns_receive_insulin_summary">Acceptez l\'insuline entrée via NS ou NSClient (elle n\'est pas injectée, uniquement pour le calcul pour IA)</string>
+    <string name="ns_receive_carbs">Recevoir les glucides</string>
+    <string name="ns_receive_carbs_summary">Accepter les glucides entrés par NS ou NSClient</string>
+    <string name="ns_receive_therapy_events">Recevoir des événements thérapeutiques</string>
+    <string name="ns_receive_therapy_events_summary">Accepter les événements de thérapie (canule, insuline, changement de batterie, etc.) entrés via NS ou NSClient</string>
+    <string name="ns_receive_cgm">Recevoir/remplir les anciennes données MGC</string>
+    <string name="ns_receive_cgm_summary">Accepter les données MGC de NS</string>
+    <string name="sms_timeout_while_wating">Délai d\'attente pour finir la communication précédente avec la pompe</string>
+    <string name="smscommunicator_another_bolus_in_queue">Un autre bolus est en file d\'attente. Réessayez plus tard.</string>
 </resources>

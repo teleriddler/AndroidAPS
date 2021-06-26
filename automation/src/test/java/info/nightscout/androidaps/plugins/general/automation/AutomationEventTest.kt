@@ -3,8 +3,8 @@ package info.nightscout.androidaps.plugins.general.automation
 import dagger.android.AndroidInjector
 import dagger.android.HasAndroidInjector
 import info.nightscout.androidaps.TestBase
-import info.nightscout.androidaps.interfaces.ConfigBuilderInterface
-import info.nightscout.androidaps.interfaces.LoopInterface
+import info.nightscout.androidaps.interfaces.ConfigBuilder
+import info.nightscout.androidaps.interfaces.Loop
 import info.nightscout.androidaps.plugins.bus.RxBusWrapper
 import info.nightscout.androidaps.plugins.general.automation.actions.ActionLoopEnable
 import info.nightscout.androidaps.plugins.general.automation.triggers.TriggerConnectorTest
@@ -20,9 +20,9 @@ import org.powermock.modules.junit4.PowerMockRunner
 @RunWith(PowerMockRunner::class)
 class AutomationEventTest : TestBase() {
 
-    @Mock lateinit var loopPlugin: LoopInterface
+    @Mock lateinit var loopPlugin: Loop
     @Mock lateinit var resourceHelper: ResourceHelper
-    @Mock lateinit var configBuilderPlugin: ConfigBuilderInterface
+    @Mock lateinit var configBuilder: ConfigBuilder
 
     var injector: HasAndroidInjector = HasAndroidInjector {
         AndroidInjector {
@@ -32,7 +32,7 @@ class AutomationEventTest : TestBase() {
             if (it is ActionLoopEnable) {
                 it.loopPlugin = loopPlugin
                 it.resourceHelper = resourceHelper
-                it.configBuilderPlugin = configBuilderPlugin
+                it.configBuilder = configBuilder
                 it.rxBus = RxBusWrapper(aapsSchedulers)
             }
         }
@@ -48,7 +48,7 @@ class AutomationEventTest : TestBase() {
         event.addAction(ActionLoopEnable(injector))
 
         // export to json
-        val eventJsonExpected = "{\"autoRemove\":false,\"readOnly\":false,\"trigger\":\"{\\\"data\\\":{\\\"connectorType\\\":\\\"AND\\\",\\\"triggerList\\\":[\\\"{\\\\\\\"data\\\\\\\":{\\\\\\\"connectorType\\\\\\\":\\\\\\\"AND\\\\\\\",\\\\\\\"triggerList\\\\\\\":[]},\\\\\\\"type\\\\\\\":\\\\\\\"info.nightscout.androidaps.plugins.general.automation.triggers.TriggerConnector\\\\\\\"}\\\"]},\\\"type\\\":\\\"info.nightscout.androidaps.plugins.general.automation.triggers.TriggerConnector\\\"}\",\"title\":\"Test\",\"systemAction\":false,\"actions\":[\"{\\\"type\\\":\\\"info.nightscout.androidaps.plugins.general.automation.actions.ActionLoopEnable\\\"}\"],\"enabled\":true}"
+        val eventJsonExpected = "{\"autoRemove\":false,\"readOnly\":false,\"trigger\":\"{\\\"data\\\":{\\\"connectorType\\\":\\\"AND\\\",\\\"triggerList\\\":[\\\"{\\\\\\\"data\\\\\\\":{\\\\\\\"connectorType\\\\\\\":\\\\\\\"AND\\\\\\\",\\\\\\\"triggerList\\\\\\\":[]},\\\\\\\"type\\\\\\\":\\\\\\\"TriggerConnector\\\\\\\"}\\\"]},\\\"type\\\":\\\"TriggerConnector\\\"}\",\"title\":\"Test\",\"systemAction\":false,\"actions\":[\"{\\\"type\\\":\\\"info.nightscout.androidaps.plugins.general.automation.actions.ActionLoopEnable\\\"}\"],\"enabled\":true}"
         Assert.assertEquals(eventJsonExpected, event.toJSON())
 
         // clone

@@ -11,16 +11,29 @@ import android.widget.LinearLayout
 import android.widget.TextView
 import androidx.core.content.ContextCompat
 import dagger.android.support.DaggerFragment
-import info.nightscout.androidaps.Config
 import info.nightscout.androidaps.Constants
 import info.nightscout.androidaps.R
 import info.nightscout.androidaps.activities.ErrorHelperActivity
 import info.nightscout.androidaps.activities.TDDStatsActivity
+import info.nightscout.androidaps.database.AppRepository
+import info.nightscout.androidaps.database.ValueWrapper
+import info.nightscout.androidaps.database.entities.UserEntry.Action
+import info.nightscout.androidaps.database.entities.UserEntry.Sources
 import info.nightscout.androidaps.dialogs.*
-import info.nightscout.androidaps.events.*
-import info.nightscout.androidaps.historyBrowser.HistoryBrowseActivity
-import info.nightscout.androidaps.interfaces.ActivePluginProvider
+import info.nightscout.androidaps.events.EventCustomActionsChanged
+import info.nightscout.androidaps.events.EventExtendedBolusChange
+import info.nightscout.androidaps.events.EventInitializationChanged
+import info.nightscout.androidaps.events.EventTempBasalChange
+import info.nightscout.androidaps.events.EventTherapyEventChange
+import info.nightscout.androidaps.extensions.toStringMedium
+import info.nightscout.androidaps.extensions.toStringShort
+import info.nightscout.androidaps.extensions.toVisibility
+import info.nightscout.androidaps.activities.HistoryBrowseActivity
+import info.nightscout.androidaps.diaconn.DiaconnG8Plugin
+import info.nightscout.androidaps.interfaces.ActivePlugin
 import info.nightscout.androidaps.interfaces.CommandQueueProvider
+import info.nightscout.androidaps.interfaces.Config
+import info.nightscout.androidaps.interfaces.IobCobCalculator
 import info.nightscout.androidaps.interfaces.ProfileFunction
 import info.nightscout.androidaps.logging.AAPSLogger
 import info.nightscout.androidaps.logging.UserEntryLogger
@@ -30,10 +43,10 @@ import info.nightscout.androidaps.plugins.general.overview.StatusLightHandler
 import info.nightscout.androidaps.plugins.pump.omnipod.eros.OmnipodErosPumpPlugin
 import info.nightscout.androidaps.queue.Callback
 import info.nightscout.androidaps.skins.SkinProvider
+import info.nightscout.androidaps.utils.DateUtil
 import info.nightscout.androidaps.utils.FabricPrivacy
 import info.nightscout.androidaps.utils.alertDialogs.OKDialog
 import info.nightscout.androidaps.utils.buildHelper.BuildHelper
-import info.nightscout.androidaps.utils.extensions.toVisibility
 import info.nightscout.androidaps.utils.protection.ProtectionCheck
 import info.nightscout.androidaps.utils.resources.ResourceHelper
 import info.nightscout.androidaps.utils.rx.AapsSchedulers
@@ -51,18 +64,21 @@ class ActionsFragment : DaggerFragment() {
     @Inject lateinit var aapsSchedulers: AapsSchedulers
     @Inject lateinit var rxBus: RxBusWrapper
     @Inject lateinit var sp: SP
+    @Inject lateinit var dateUtil: DateUtil
     @Inject lateinit var profileFunction: ProfileFunction
     @Inject lateinit var ctx: Context
     @Inject lateinit var resourceHelper: ResourceHelper
     @Inject lateinit var statusLightHandler: StatusLightHandler
     @Inject lateinit var fabricPrivacy: FabricPrivacy
-    @Inject lateinit var activePlugin: ActivePluginProvider
+    @Inject lateinit var activePlugin: ActivePlugin
+    @Inject lateinit var iobCobCalculator: IobCobCalculator
     @Inject lateinit var commandQueue: CommandQueueProvider
     @Inject lateinit var buildHelper: BuildHelper
     @Inject lateinit var protectionCheck: ProtectionCheck
     @Inject lateinit var skinProvider: SkinProvider
     @Inject lateinit var config: Config
     @Inject lateinit var uel: UserEntryLogger
+    @Inject lateinit var repository: AppRepository
 
     private var disposable: CompositeDisposable = CompositeDisposable()
 
@@ -153,8 +169,8 @@ class ActionsFragment : DaggerFragment() {
             }
         }
         extendedBolusCancel?.setOnClickListener {
-            if (activePlugin.activeTreatments.isInHistoryExtendedBoluslInProgress) {
-                uel.log("CANCEL EXTENDED BOLUS")
+            if (iobCobCalculator.getExtendedBolus(dateUtil.now()) != null) {
+                uel.log(Action.CANCEL_EXTENDED_BOLUS, Sources.Actions)
                 commandQueue.cancelExtended(object : Callback() {
                     override fun run() {
                         if (!result.success) {
@@ -168,8 +184,8 @@ class ActionsFragment : DaggerFragment() {
             TempBasalDialog().show(childFragmentManager, "Actions")
         }
         cancelTempBasal?.setOnClickListener {
-            if (activePlugin.activeTreatments.isTempBasalInProgress) {
-                uel.log("CANCEL TEMP BASAL")
+            if (iobCobCalculator.getTempBasalIncludingConvertedExtended(dateUtil.now()) != null) {
+                uel.log(Action.CANCEL_TEMP_BASAL, Sources.Actions)
                 commandQueue.cancelTempBasal(true, object : Callback() {
                     override fun run() {
                         if (!result.success) {
@@ -219,10 +235,6 @@ class ActionsFragment : DaggerFragment() {
             .observeOn(aapsSchedulers.main)
             .subscribe({ updateGui() }, fabricPrivacy::logException)
         disposable += rxBus
-            .toObservable(EventRefreshOverview::class.java)
-            .observeOn(aapsSchedulers.main)
-            .subscribe({ updateGui() }, fabricPrivacy::logException)
-        disposable += rxBus
             .toObservable(EventExtendedBolusChange::class.java)
             .observeOn(aapsSchedulers.main)
             .subscribe({ updateGui() }, fabricPrivacy::logException)
@@ -235,7 +247,7 @@ class ActionsFragment : DaggerFragment() {
             .observeOn(aapsSchedulers.main)
             .subscribe({ updateGui() }, fabricPrivacy::logException)
         disposable += rxBus
-            .toObservable(EventCareportalEventChange::class.java)
+            .toObservable(EventTherapyEventChange::class.java)
             .observeOn(aapsSchedulers.main)
             .subscribe({ updateGui() }, fabricPrivacy::logException)
         updateGui()
@@ -254,7 +266,7 @@ class ActionsFragment : DaggerFragment() {
         val pump = activePlugin.activePump
 
         profileSwitch?.visibility = (
-            activePlugin.activeProfileInterface.profile != null &&
+            activePlugin.activeProfileSource.profile != null &&
                 pump.pumpDescription.isSetBasalProfileCapable &&
                 pump.isInitialized() &&
                 !pump.isSuspended()).toVisibility()
@@ -263,12 +275,12 @@ class ActionsFragment : DaggerFragment() {
             extendedBolus?.visibility = View.GONE
             extendedBolusCancel?.visibility = View.GONE
         } else {
-            val activeExtendedBolus = activePlugin.activeTreatments.getExtendedBolusFromHistory(System.currentTimeMillis())
-            if (activeExtendedBolus != null) {
+            val activeExtendedBolus = repository.getExtendedBolusActiveAt(dateUtil.now()).blockingGet()
+            if (activeExtendedBolus is ValueWrapper.Existing) {
                 extendedBolus?.visibility = View.GONE
                 extendedBolusCancel?.visibility = View.VISIBLE
                 @Suppress("SetTextI18n")
-                extendedBolusCancel?.text = resourceHelper.gs(R.string.cancel) + " " + activeExtendedBolus.toStringMedium()
+                extendedBolusCancel?.text = resourceHelper.gs(R.string.cancel) + " " + activeExtendedBolus.value.toStringMedium(dateUtil)
             } else {
                 extendedBolus?.visibility = View.VISIBLE
                 extendedBolusCancel?.visibility = View.GONE
@@ -279,7 +291,7 @@ class ActionsFragment : DaggerFragment() {
             setTempBasal?.visibility = View.GONE
             cancelTempBasal?.visibility = View.GONE
         } else {
-            val activeTemp = activePlugin.activeTreatments.getTempBasalFromHistory(System.currentTimeMillis())
+            val activeTemp = iobCobCalculator.getTempBasalIncludingConvertedExtended(System.currentTimeMillis())
             if (activeTemp != null) {
                 setTempBasal?.visibility = View.GONE
                 cancelTempBasal?.visibility = View.VISIBLE
@@ -293,7 +305,11 @@ class ActionsFragment : DaggerFragment() {
         val activeBgSource = activePlugin.activeBgSource
         historyBrowser?.visibility = (profile != null).toVisibility()
         fill?.visibility = (pump.pumpDescription.isRefillingCapable && pump.isInitialized() && !pump.isSuspended()).toVisibility()
-        pumpBatteryChange?.visibility = (pump.pumpDescription.isBatteryReplaceable || (pump is OmnipodErosPumpPlugin && pump.isUseRileyLinkBatteryLevel && pump.isBatteryChangeLoggingEnabled)).toVisibility()
+        if(pump is DiaconnG8Plugin) {
+            pumpBatteryChange?.visibility = (pump.pumpDescription.isBatteryReplaceable && !pump.isBatteryChangeLoggingEnabled()).toVisibility()
+        } else {
+            pumpBatteryChange?.visibility = (pump.pumpDescription.isBatteryReplaceable || (pump is OmnipodErosPumpPlugin && pump.isUseRileyLinkBatteryLevel && pump.isBatteryChangeLoggingEnabled)).toVisibility()
+        }
         tempTarget?.visibility = (profile != null && config.APS).toVisibility()
         tddStats?.visibility = pump.pumpDescription.supportsTDDs.toVisibility()
 

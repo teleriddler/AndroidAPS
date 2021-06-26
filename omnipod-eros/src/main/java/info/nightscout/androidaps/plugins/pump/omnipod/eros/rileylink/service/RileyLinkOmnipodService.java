@@ -9,7 +9,6 @@ import org.apache.commons.lang3.StringUtils;
 
 import javax.inject.Inject;
 
-import info.nightscout.androidaps.interfaces.DatabaseHelperInterface;
 import info.nightscout.androidaps.logging.LTag;
 import info.nightscout.androidaps.plugins.pump.common.defs.PumpDeviceState;
 import info.nightscout.androidaps.plugins.pump.common.hw.rileylink.RileyLinkCommunicationManager;
@@ -32,12 +31,11 @@ import info.nightscout.androidaps.plugins.pump.omnipod.eros.util.AapsOmnipodUtil
  */
 public class RileyLinkOmnipodService extends RileyLinkService {
 
-    private static final String REGEX_MAC = "([\\da-fA-F]{1,2}(?:\\:|$)){6}";
+    private static final String REGEX_MAC = "([\\da-fA-F]{1,2}(?::|$)){6}";
 
     @Inject OmnipodErosPumpPlugin omnipodErosPumpPlugin;
     @Inject AapsOmnipodUtil aapsOmnipodUtil;
     @Inject PodStateManager podStateManager;
-    @Inject DatabaseHelperInterface databaseHelper;
     @Inject AapsOmnipodErosManager aapsOmnipodErosManager;
     @Inject OmnipodRileyLinkCommunicationManager omnipodRileyLinkCommunicationManager;
 

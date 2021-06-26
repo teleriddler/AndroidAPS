@@ -16,7 +16,7 @@ class DanaRsPacketBolusGetBolusOptionTest : DanaRSTestBase() {
 
     private val packetInjector = HasAndroidInjector {
         AndroidInjector {
-            if (it is DanaRS_Packet_Bolus_Get_Bolus_Option) {
+            if (it is DanaRSPacketBolusGetBolusOption) {
                 it.aapsLogger = aapsLogger
                 it.rxBus = rxBus
                 it.resourceHelper = resourceHelper
@@ -26,7 +26,7 @@ class DanaRsPacketBolusGetBolusOptionTest : DanaRSTestBase() {
     }
 
     @Test fun runTest() {
-        val packet = DanaRS_Packet_Bolus_Get_Bolus_Option(packetInjector)
+        val packet = DanaRSPacketBolusGetBolusOption(packetInjector)
         // test message decoding
         //if dataArray is 1 pump.isExtendedBolusEnabled should be true
         packet.handleMessage(createArray(21, 1.toByte()))

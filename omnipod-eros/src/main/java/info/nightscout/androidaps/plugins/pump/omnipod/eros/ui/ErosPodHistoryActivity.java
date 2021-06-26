@@ -10,10 +10,9 @@ import android.widget.ArrayAdapter;
 import android.widget.Spinner;
 import android.widget.TextView;
 
+import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
-
-import org.jetbrains.annotations.NotNull;
 
 import java.util.ArrayList;
 import java.util.Calendar;
@@ -24,14 +23,13 @@ import java.util.List;
 import javax.inject.Inject;
 
 import info.nightscout.androidaps.activities.NoSplashAppCompatActivity;
-import info.nightscout.androidaps.data.Profile;
 import info.nightscout.androidaps.db.OmnipodHistoryRecord;
-import info.nightscout.androidaps.interfaces.DatabaseHelperInterface;
+import info.nightscout.androidaps.interfaces.Profile;
 import info.nightscout.androidaps.logging.AAPSLogger;
 import info.nightscout.androidaps.logging.LTag;
-import info.nightscout.androidaps.plugins.pump.common.data.TempBasalPair;
 import info.nightscout.androidaps.plugins.pump.common.defs.PumpHistoryEntryGroup;
 import info.nightscout.androidaps.plugins.pump.common.defs.PumpType;
+import info.nightscout.androidaps.plugins.pump.common.defs.TempBasalPair;
 import info.nightscout.androidaps.plugins.pump.common.utils.ProfileUtil;
 import info.nightscout.androidaps.plugins.pump.omnipod.eros.R;
 import info.nightscout.androidaps.plugins.pump.omnipod.eros.definition.PodHistoryEntryType;
@@ -43,7 +41,6 @@ public class ErosPodHistoryActivity extends NoSplashAppCompatActivity {
     @Inject AAPSLogger aapsLogger;
     @Inject AapsOmnipodUtil aapsOmnipodUtil;
     @Inject ResourceHelper resourceHelper;
-    @Inject DatabaseHelperInterface databaseHelper;
 
     private Spinner historyTypeSpinner;
     private TextView statusView;
@@ -69,9 +66,9 @@ public class ErosPodHistoryActivity extends NoSplashAppCompatActivity {
         GregorianCalendar gc = new GregorianCalendar();
         gc.add(Calendar.HOUR_OF_DAY, -24);
 
-        databaseHelper.getAllOmnipodHistoryRecordsFromTimestamp(gc.getTimeInMillis(), false);
-
-        fullHistoryList.addAll(databaseHelper.getAllOmnipodHistoryRecordsFromTimestamp(gc.getTimeInMillis(), true));
+//        databaseHelper.getAllOmnipodHistoryRecordsFromTimestamp(gc.getTimeInMillis(), false);
+//        fullHistoryList.addAll(databaseHelper.getAllOmnipodHistoryRecordsFromTimestamp(gc.getTimeInMillis(), true));
+        throw new IllegalStateException("Not implemented");
     }
 
 
@@ -198,7 +195,7 @@ public class ErosPodHistoryActivity extends NoSplashAppCompatActivity {
             this.name = entryGroup.getTranslated();
         }
 
-        @NotNull
+        @NonNull
         @Override
         public String toString() {
             return name;
@@ -220,7 +217,7 @@ public class ErosPodHistoryActivity extends NoSplashAppCompatActivity {
         }
 
 
-        @NotNull
+        @NonNull
         @Override
         public HistoryViewHolder onCreateViewHolder(ViewGroup viewGroup, int viewType) {
             View v = LayoutInflater.from(viewGroup.getContext()).inflate(R.layout.omnipod_eros_pod_history_item, //
@@ -230,7 +227,7 @@ public class ErosPodHistoryActivity extends NoSplashAppCompatActivity {
 
 
         @Override
-        public void onBindViewHolder(@NotNull HistoryViewHolder holder, int position) {
+        public void onBindViewHolder(@NonNull HistoryViewHolder holder, int position) {
             OmnipodHistoryRecord record = historyList.get(position);
 
             if (record != null) {
@@ -309,7 +306,7 @@ public class ErosPodHistoryActivity extends NoSplashAppCompatActivity {
 
             try {
                 Profile.ProfileValue[] profileValuesArray = aapsOmnipodUtil.getGsonInstance().fromJson(data, Profile.ProfileValue[].class);
-                valueView.setText(ProfileUtil.getBasalProfilesDisplayable(profileValuesArray, PumpType.Omnipod_Eros));
+                valueView.setText(ProfileUtil.getBasalProfilesDisplayable(profileValuesArray, PumpType.OMNIPOD_EROS));
             } catch (Exception e) {
                 aapsLogger.error(LTag.PUMP, "Problem parsing Profile json. Ex: {}, Data:\n{}", e.getMessage(), data);
                 valueView.setText("");

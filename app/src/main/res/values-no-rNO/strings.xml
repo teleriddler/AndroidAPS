@@ -2,7 +2,6 @@
 <resources>
     <!--    <string name="fi_lang" translatable="false">Finnish</string> -->
     <!--   <string name="he_lang" translatable="false">Hebrew</string> -->
-    <!--    <string name="ga_lang" translatable="false">Irish</string> -->
     <!--    <string name="ja_lang" translatable="false">Japanese</string> -->
     <string name="treatmentssafety_title">Sikkerhet ved behandlinger</string>
     <string name="treatmentssafety_maxbolus_title">Maks tillat bolus [U]</string>
@@ -30,7 +29,6 @@
     <string name="description_overview">Viser loopens nåværende tilstand og knapper for de vanligste funksjonene</string>
     <string name="description_persistent_notification">Viser en konstant melding med en kort oppsummering av hva loop gjør</string>
     <string name="description_profile_local">Definer en profil som er tilgjengelig offline.</string>
-    <string name="description_profile_nightscout">Bruker profiler som du har definert i Nightscout</string>
     <string name="description_pump_mdi">Integrasjon mot de som kun bruker insulinpenner i sin diabetesbehandling</string>
     <string name="description_pump_virtual">Integrasjon mot pumper som ikke støttes av AndroidAPS (åpen loop)</string>
     <string name="description_sensitivity_aaps">Sensitiviteten beregnes på samme måte som i Oref0, men du kan angi hvor mye av historikken som skal tas med i beregningen. Minimum opptak av karbohydrater beregnes ut fra maks karbohydratopptak angitt i dine innstillinger.</string>
@@ -78,14 +76,11 @@
     <string name="sms_delta">Delta:</string>
     <string name="configbuilder">Konfigurasjonsverktøy</string>
     <string name="overview">Oversikt</string>
-    <string name="nsprofile">NS profil</string>
     <string name="treatments">Behandlinger</string>
     <string name="virtualpump">Virtuell pumpe</string>
     <string name="careportal">Careportal</string>
     <string name="configbuilder_pump">Pumpe</string>
     <string name="configbuilder_pump_description">Hvilken pumpe ønsker du å bruke sammen med AndroidAPS?</string>
-    <string name="configbuilder_treatments">Behandlinger</string>
-    <string name="configbuilder_treatments_description">Hvilken plugin burde brukes til håndtering av behandlinger?</string>
     <string name="configbuilder_profile">Profil</string>
     <string name="configbuilder_profile_description">Hvilken profil bør AndroidAPS bruke?</string>
     <string name="configbuilder_aps">APS</string>
@@ -94,7 +89,6 @@
     <string name="configbuilder_general_description">Det er noen generelle plugins som kan være nyttige.</string>
     <string name="configbuilder_constraints_description">Hvilke begrensninger brukes?</string>
     <string name="constraints">Begrensninger</string>
-    <string name="loop">Loop</string>
     <string name="configbuilder_loop">Loop</string>
     <string name="configbuilder_loop_description">Bruk dette for å aktivere AndroidAPS loop integrasjon.</string>
     <string name="loop_aps_label">APS</string>
@@ -139,6 +133,7 @@
     <string name="configbuilder_nightscoutversion_label">Nightscout versjon:</string>
     <string name="missing_carbs">Mangler %1$d g</string>
     <string name="exported">Innstillinger lagret</string>
+    <string name="ue_exported">Brukeroppføringer er eksportert</string>
     <string name="export_to">Eksporter innstillinger til</string>
     <string name="import_from">Importer innstillinger fra</string>
     <string name="setting_imported">Innstillinger importert</string>
@@ -195,7 +190,7 @@
     <string name="smscommunicator_loophasbeenenabled">Loop har blitt aktivert</string>
     <string name="smscommunicator_loopisenabled">Loop er aktivert</string>
     <string name="valuelimitedto">%1$.2f begrenset til %2$.2f</string>
-    <string name="valueoutofrange">Verdien %1$s er utenfor angitt begrensning</string>
+    <string name="valueoutofrange">»%1$s« er utenfor lovlige grenseverdier</string>
     <string name="smscommunicator_pumpconnectwithcode">For å koble til pumpen, svar med kode %1$s</string>
     <string name="smscommunicator_pumpconnectfail">Tilkobling til pumpen mislyktes</string>
     <string name="smscommunicator_pumpdisconnectwithcode">For å koble fra pumpen i %1$d minutter, svar med koden %2$s</string>
@@ -270,11 +265,8 @@
     <string name="openapsma_autosensdata_label">Autosens data</string>
     <string name="openapsma_scriptdebugdata_label">Script feilsøking</string>
     <string name="openapsama_useautosens">Bruk Autosens funksjon</string>
-    <string name="refresheventsfromnightscout">Oppdater hendelser fra NS</string>
+    <string name="refresheventsfromnightscout">Gjenoppfrisk fra NS</string>
     <string name="deletefuturetreatments">Slett behandlinger i fremtiden</string>
-    <string name="eatingsoon">Spise snart</string>
-    <string name="hypo">Hypo</string>
-    <string name="activity">Aktivitet</string>
     <string name="actions_shortname">ACT</string>
     <string name="configbuilder_shortname">KONF</string>
     <string name="loop_shortname">LOOP</string>
@@ -282,7 +274,6 @@
     <string name="localprofile_shortname">LP</string>
     <string name="overview_shortname">HJEM</string>
     <string name="virtualpump_shortname">VPUMP</string>
-    <string name="profileviewer_shortname">NSPROFIL</string>
     <string name="treatments_shortname">BEH</string>
     <string name="objectives_shortname">MÅL</string>
     <string name="wear_shortname">WEAR</string>
@@ -409,8 +400,6 @@
     <string name="xdripstatus_shortname">xds</string>
     <string name="wear_showbgi_title">Vis BGI</string>
     <string name="wear_showbgi_summary">Legg til BGI i statuslinje</string>
-    <string name="ns_noupload">Ingen opplast til NS</string>
-    <string name="ns_noupload_summary">Alle data som sendes til NS blir slettet. Selv om AAPS er tilknyttet NS, gjøres det ingen endring i NS</string>
     <string name="overview_extendedbolus_cancel_button">Avbryt forlenget bolus</string>
     <string name="doprofileswitch">Gjør profilbytte</string>
     <string name="careportal_sensor_label">Sensor</string>
@@ -425,7 +414,6 @@
     <string name="nsalarm_urgent_staledatavalue_label">Kritisk mangel på data advarsel [min]</string>
     <string name="openapsama_autosens_period">Intervall for autosens [h]</string>
     <string name="openapsama_autosens_period_summary">Antall timer med historiske data for beregning av sensitivitet (absorpsjonstid for KH er ekskludert)</string>
-    <string name="pump">Pumpe</string>
     <string name="openaps">OpenAPS</string>
     <string name="uploader">Opplaster</string>
     <string name="configbuilder_sensitivity">Sensitivitets deteksjon</string>
@@ -567,7 +555,6 @@
     <string name="category">Kategori</string>
     <string name="subcategory">Underkategori</string>
     <string name="bolusrecordedonly">Bolus vil bare bli loggført (ikke levert av pumpe)</string>
-    <string name="ns_autobackfill_summary">Hente manglende BS data fra NS</string>
     <string name="loop_smbsetbypump_label">SMB satt med pumpe</string>
     <string name="overview_show_activity">Aktivitet</string>
     <string name="overview_show_bgi">Blodsukkerpåvirkning</string>
@@ -634,7 +621,6 @@
     <string name="virtualpump_type">Virtuell pumpetype</string>
     <string name="virtualpump_definition">Pumpedefinisjon</string>
     <string name="virtualpump_pump_def">Bolus: Step=%1$s\nForlenget bolus: [Step=%2$s, Varighet=%3$smin-%4$sh]\nBasal: Step=%5$s\nTBR: %6$s (av %7$s), Varighet=%8$smin-%9$sh\n%10$s</string>
-    <string name="ns_autobackfill_title">Auto tilbakefyll BS</string>
     <string name="wear_wizard_settings">Veiviser innstillinger</string>
     <string name="wear_wizard_settings_summary">Beregninger inkludert i resultatet fra veiviseren:</string>
     <string name="wear_display_settings">Visningsinnstillinger</string>
@@ -642,14 +628,12 @@
     <string name="enable_nsclient">Aktiver NSClient</string>
     <string name="welcometosetupwizard">Velkommen til oppsettveiviseren. Den vil lede deg gjennom installasjonsprosessen\n</string>
     <string name="readstatus">Les status</string>
-    <string name="adjustprofileinns">Endringer må gjøres i NS</string>
     <string name="exitwizard">Hopp over oppsettsveiviser</string>
     <string name="setupwizard_loop_description">Trykk på knappen under for å tillate at AndroidAPS foreslår/gjør basal endringer</string>
     <string name="setupwizard_sensitivity_description">Sensitivitets plugin brukes til å oppdage insulinsensitivitet og COB beregninger. For mer info, se:</string>
     <string name="setupwizard_sensitivity_url">https://github.com/MilosKozak/AndroidAPS/wiki/Sensitivity-detection-and-COB</string>
     <string name="nsclientinfotext">NSClient håndterer tilkobling til Nightscout. Du kan hoppe over denne delen nå, men du vil ikke kunne bestå læringsmålene før den er satt opp.</string>
     <string name="diawarning">Husk: nye insulinprofiler krever en DIA på minst 5t. DIA 5-6t på ny profil er lik DIA 3t på gamle insulinprofiler.</string>
-    <string name="setupwizard_profile_description">Vennligst velg kilde for din profil. Hvis pasienten er et barn anbefales det å bruke NS profil. Hvis ingen følger deg på Nightscout anbefales det å bruke en Lokal Profil. Husk at du her kun velger hvor profilen din ligger lagret. For å bruke den må du velge Profilbytte</string>
     <string name="setupwizard_aps_description">Velg en av de tilgjengelige algoritmene. De er sortert fra eldst til nyest. De nyeste algoritmene er vanligvis mer kraftfull og aggressiv. Hvis du er en ny looper kan det være fornuftig å starte med AMA og ikke den siste. Ikke glem å lese OpenAPS dokumentasjonen og konfigurer algoritmen før den brukes.</string>
     <string name="setupwizard_pump_waiting_for_riley_link_connection">Vennligst konfigurer din RileyLink under. Etter å ha valgt en RileyLink, vil det være mulig å fortsette konfigureringen når RileyLink statusen er \"Tilkoblet\". Dette kan ta et minutt.\n</string>
     <string name="setupwizard_pump_pump_not_initialized"><b>Merk:</b> Du kan fortsette oppsettet når pumpen er satt opp.\n</string>
@@ -752,7 +736,6 @@
     <string name="format_carbs_ic">%1$.0fg IC: %2$.1f</string>
     <string name="format_cob_ic">%1$.1fg IC: %2$.1f</string>
     <string name="format_percent">%1$d%%</string>
-    <string name="boluswizard">Bolus wizard</string>
     <string name="unit_minute_short">min</string>
     <string name="profile_name">Profilnavn:</string>
     <string name="selected_profile">Valgt:</string>
@@ -762,7 +745,6 @@
     <string name="objectives_button_unstart">Sletting startet</string>
     <string name="doyouwantresetstart">Ønsker du å omstarte læringsmålet? Du vil miste fullførte trinn.</string>
     <string name="setupwizard_units_prompt">Velg enheter som du vil vise verdier i</string>
-    <string name="ns_ploadlocalprofile">Last opp lokale profilendringer til NS</string>
     <string name="dia_short">DIA</string>
     <string name="ic_short">IC</string>
     <string name="isf_short">ISF</string>
@@ -794,6 +776,7 @@
     <string name="randombg_short">BS</string>
     <string name="tools">Verktøy</string>
     <string name="show_calculation">Vis beregning</string>
+    <string name="show_removed">Vis slettede</string>
     <string name="clearqueueconfirm">Slett køen? All data i køen vil gå tapt!</string>
     <string name="ebstopsloop">Bruk av forlenget bolus funksjon vil deaktivere lukket loop i perioden med forlenget bolus. Vil du virkelig dette?</string>
     <string name="closed_loop_disabled_with_eb">Lukket loop deaktivert på grunn av forlenget bolus</string>
@@ -905,4 +888,35 @@
     <string name="email_address">E-postadresse</string>
     <string name="privacy_settings">Personverninnstillinger</string>
     <string name="privacy_summary">Du kan oppgi valgfri e-postadresse hvis du ønsker å bli varslet om krasj. Dette er ikke en automatisert tjeneste. Du vil bli kontaktet av utviklere ved farlige hendelser.</string>
+    <string name="profile_low_target">Profil lavt blodsukkermål</string>
+    <string name="profile_high_target">Profil høyt blodsukkermål</string>
+    <string name="temp_target_low_target">Midlertidig mål bunnverdi</string>
+    <string name="temp_target_high_target">Midlertidig mål toppverdi</string>
+    <string name="temp_target_value">Midlertidig målverdi</string>
+    <string name="profile_dia">Profil insulinvarighet (DIA)</string>
+    <string name="profile_sensitivity_value">Profil sensitivitetsverdi (IF)</string>
+    <string name="profile_max_daily_basal_value">Profil maksimal basal dose</string>
+    <string name="current_basal_value">Aktiv basal dose</string>
+    <string name="profile_carbs_ratio_value">Profil karbohydratfaktor (IK)</string>
+    <string name="full_sync">Full synkronisering</string>
+    <string name="prime">Prime</string>
+    <string name="ns_sync_options">Synkronisering</string>
+    <string name="ns_upload_summary">Profiler, boluser, karbohydrater, midlertidige basaler lastes opp til NS</string>
+    <string name="ns_upload">Last opp data til NS</string>
+    <string name="ns_receive_profile_store">Hent lagrede profiler</string>
+    <string name="ns_receive_profile_store_summary">Synkroniser profiler fra NS til lokal profil</string>
+    <string name="ns_receive_temp_target">Motta midlertidige BS mål</string>
+    <string name="ns_receive_temp_target_summary">Aksepter midlertidige mål angitt med NS eller NSClient</string>
+    <string name="ns_receive_profile_switch">Motta profilbytter</string>
+    <string name="ns_receive_profile_switch_summary">Aksepter profilbytter som er angitt via NS eller NSClient</string>
+    <string name="ns_receive_offline_event">Motta APS offline hendelser</string>
+    <string name="ns_receive_offline_event_summary">Aksepter APS offline hendelser lagt inn gjennom NS eller NSKlient</string>
+    <string name="ns_receive_insulin">Motta insulin</string>
+    <string name="ns_receive_insulin_summary">Aksepter insulin angitt via NS eller NSClient (enhetene er ikke dosert, kun beregnet mot IOB)</string>
+    <string name="ns_receive_carbs">Motta karbohydrater</string>
+    <string name="ns_receive_carbs_summary">Aksepter karbohydrater angitt med NS eller NSClient</string>
+    <string name="ns_receive_therapy_events">Motta behandlingshendelser</string>
+    <string name="ns_receive_therapy_events_summary">Godta behandlingshendelser (kanyle, insulin, batteribytte osv.) som er lagt inn gjennom NS eller NSClient</string>
+    <string name="ns_receive_cgm">Motta/tilbakefyll CGM data</string>
+    <string name="ns_receive_cgm_summary">Aksepter CGM data fra NS</string>
 </resources>

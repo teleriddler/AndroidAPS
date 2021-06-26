@@ -8,7 +8,7 @@ import androidx.preference.PreferenceFragmentCompat
 import androidx.preference.SwitchPreference
 import dagger.android.HasAndroidInjector
 import info.nightscout.androidaps.BuildConfig
-import info.nightscout.androidaps.Config
+import info.nightscout.androidaps.interfaces.Config
 import info.nightscout.androidaps.R
 import info.nightscout.androidaps.interfaces.PluginBase
 import info.nightscout.androidaps.interfaces.PluginDescription
@@ -35,6 +35,7 @@ class MaintenancePlugin @Inject constructor(
     aapsLogger: AAPSLogger,
     private val buildHelper: BuildHelper,
     private val config: Config,
+    private val fileListProvider: PrefFileListProvider,
     private val loggerUtils: LoggerUtils
 ) : PluginBase(PluginDescription()
     .mainType(PluginType.GENERAL)
@@ -53,7 +54,7 @@ class MaintenancePlugin @Inject constructor(
         val recipient = sp.getString(R.string.key_maintenance_logs_email, "logs@androidaps.org")
         val amount = sp.getInt(R.string.key_maintenance_logs_amount, 2)
         val logs = getLogFiles(amount)
-        val zipDir = context.getExternalFilesDir("exports")
+        val zipDir = fileListProvider.ensureTempDirExists()
         val zipFile = File(zipDir, constructName())
         aapsLogger.debug("zipFile: ${zipFile.absolutePath}")
         val zip = zipLogs(zipFile, logs)
@@ -65,14 +66,14 @@ class MaintenancePlugin @Inject constructor(
 
     //todo replace this with a call on startup of the application, specifically to remove
     // unnecessary garbage from the log exports
-    fun deleteLogs() {
+    fun deleteLogs(keep: Int) {
         val logDir = File(loggerUtils.logDirectory)
         val files = logDir.listFiles { _: File?, name: String ->
             (name.startsWith("AndroidAPS") && name.endsWith(".zip"))
         }
-        Arrays.sort(files) { f1: File, f2: File -> f1.name.compareTo(f2.name) }
+        Arrays.sort(files) { f1: File, f2: File -> f2.name.compareTo(f1.name) }
         var delFiles = listOf(*files)
-        val amount = sp.getInt(R.string.key_logshipper_amount, 2)
+        val amount = sp.getInt(R.string.key_logshipper_amount, keep)
         val keepIndex = amount - 1
         if (keepIndex < delFiles.size) {
             delFiles = delFiles.subList(keepIndex, delFiles.size)
@@ -80,7 +81,7 @@ class MaintenancePlugin @Inject constructor(
                 file.delete()
             }
         }
-        val exportDir = File(loggerUtils.logDirectory, "exports")
+        val exportDir = fileListProvider.ensureTempDirExists()
         if (exportDir.exists()) {
             val expFiles = exportDir.listFiles()
             for (file in expFiles) {
@@ -173,7 +174,7 @@ class MaintenancePlugin @Inject constructor(
         builder.append("Build: " + BuildConfig.BUILDVERSION + System.lineSeparator())
         builder.append("Remote: " + BuildConfig.REMOTE + System.lineSeparator())
         builder.append("Flavor: " + BuildConfig.FLAVOR + BuildConfig.BUILD_TYPE + System.lineSeparator())
-        builder.append(resourceHelper.gs(R.string.configbuilder_nightscoutversion_label) + " " + nsSettingsStatus.nightscoutVersionName + System.lineSeparator())
+        builder.append(resourceHelper.gs(R.string.configbuilder_nightscoutversion_label) + " " + nsSettingsStatus.getVersion() + System.lineSeparator())
         if (buildHelper.isEngineeringMode()) builder.append(resourceHelper.gs(R.string.engineering_mode_enabled))
         return sendMail(attachmentUri, recipient, subject, builder.toString())
     }

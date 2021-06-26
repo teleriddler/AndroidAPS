@@ -2,7 +2,6 @@
 <resources>
     <!--    <string name="fi_lang" translatable="false">Finnish</string> -->
     <!--   <string name="he_lang" translatable="false">Hebrew</string> -->
-    <!--    <string name="ga_lang" translatable="false">Irish</string> -->
     <!--    <string name="ja_lang" translatable="false">Japanese</string> -->
     <string name="treatmentssafety_title">Setări siguranță tratament</string>
     <string name="treatmentssafety_maxbolus_title">Bolus maxim admis [U]</string>
@@ -30,7 +29,6 @@
     <string name="description_overview">Afişează starea curentă a buclei şi butoanele pentru cele mai folosite acţiuni</string>
     <string name="description_persistent_notification">Afişează o notificare activă cu o scurtă descriere referitoare la starea buclei</string>
     <string name="description_profile_local">Definire profil care să fie valabil offline.</string>
-    <string name="description_profile_nightscout">Foloseşte profilul predefinit deja în Nightscout</string>
     <string name="description_pump_mdi">Integrare cu pompă virtuală, pentru persoanele ce folosesc terapia cu pen</string>
     <string name="description_pump_virtual">Integrare cu pompele ce nu au încă un driver software disponibil (Buclă Deschisă)</string>
     <string name="description_sensitivity_aaps">Sensibilitatea este calculată la fel ca în algoritmul Oref0, dar se poate specifica un interval de timp în trecut. Absorbția minimă de carbohidrați este calculată din parametrul echivalent, stabilit în preferințe.</string>
@@ -78,14 +76,11 @@
     <string name="sms_delta">Diferență:</string>
     <string name="configbuilder">Configurator</string>
     <string name="overview">Privire de ansamblu</string>
-    <string name="nsprofile">Profil NS</string>
     <string name="treatments">Tratamente</string>
     <string name="virtualpump">Pompă virtuală</string>
     <string name="careportal">Careportal</string>
     <string name="configbuilder_pump">Pompă</string>
     <string name="configbuilder_pump_description">Ce pompă doriți să folosiți cu AndroidAPS?</string>
-    <string name="configbuilder_treatments">Tratamente</string>
-    <string name="configbuilder_treatments_description">Ce plugin doriți să folosiți pentru gestionarea tratamentelor?</string>
     <string name="configbuilder_profile">Profil</string>
     <string name="configbuilder_profile_description">Ce profil doriți să folosească AndroidAPS?</string>
     <string name="configbuilder_aps">APS</string>
@@ -94,7 +89,6 @@
     <string name="configbuilder_general_description">Există pluginuri generale pe care le-ați putea găsi utile.</string>
     <string name="configbuilder_constraints_description">Ce constrângeri sunt aplicate?</string>
     <string name="constraints">Constrângeri</string>
-    <string name="loop">Buclă</string>
     <string name="configbuilder_loop">Buclă</string>
     <string name="configbuilder_loop_description">Folosiți aceasta pentru a activa facilitățile de buclă a AndroidAPS.</string>
     <string name="loop_aps_label">APS</string>
@@ -195,7 +189,6 @@
     <string name="smscommunicator_loophasbeenenabled">Bucla a fost activată</string>
     <string name="smscommunicator_loopisenabled">Bucla este activată</string>
     <string name="valuelimitedto">%1$.2f este limitată la %2$.2f</string>
-    <string name="valueoutofrange">Valoarea %1$s este mai mare decât limita stabilită</string>
     <string name="smscommunicator_pumpconnectwithcode">Pentru a conecta pompa raspundeti cu codul %1$s</string>
     <string name="smscommunicator_pumpconnectfail">Conectarea cu pompa a esuat</string>
     <string name="smscommunicator_pumpdisconnectwithcode">Pentru a deconecta pompa timp de %1$d minute, răspundeți cu: %2$s</string>
@@ -236,6 +229,8 @@
     <string name="mealbolus">Masă</string>
     <string name="correctionbous">Corecție</string>
     <string name="actions">Acțiuni</string>
+    <string name="ns_upload_only">(E PERICULOS SĂ DEZACTIVEZI) Doar încărcare în NS</string>
+    <string name="ns_upload_only_summary">Numai încărcare NS (sincronizare dezactivata). Nu este eficient pe SGV (rom. valori de glicemie din senzor) dacă nu este selectată o sursă locală ca xDrip. Nu este eficient pe Profiluri dacă sunt utilizate cele din NS.\n!!! ATENȚIE !!! Dezactivarea acestei opțiuni poate determina disfuncționalități și supradozaj cu insulină dacă oricare dintre componentele dumneavoastră (AAPS, NS, xDrip) este configurată greșit. Urmăriți cu atenție dacă datele afișate de AAPS se potrivesc cu starea pompei!</string>
     <string name="pumpNotInitialized">Pompa nu este inițializată!</string>
     <string name="primefill">Pregătire/umplere</string>
     <string name="fillwarning">Asigurați-vă că aveți cantitatea specificată de instrucțiunile setului de infuzie!</string>
@@ -268,11 +263,7 @@
     <string name="openapsma_autosensdata_label">Date Autosens</string>
     <string name="openapsma_scriptdebugdata_label">Depanare script</string>
     <string name="openapsama_useautosens">Folosește opțiunea de autosensibilitate</string>
-    <string name="refresheventsfromnightscout">Sincronizează cu NS</string>
     <string name="deletefuturetreatments">Ștergerea tratamentelor înregistrate în viitor</string>
-    <string name="eatingsoon">Mănânc în curând</string>
-    <string name="hypo">Hipo</string>
-    <string name="activity">Activitate</string>
     <string name="actions_shortname">ACT</string>
     <string name="configbuilder_shortname">CONF</string>
     <string name="loop_shortname">BUCL</string>
@@ -280,13 +271,13 @@
     <string name="localprofile_shortname">LP</string>
     <string name="overview_shortname">ACASĂ</string>
     <string name="virtualpump_shortname">POMPĂV</string>
-    <string name="profileviewer_shortname">PROFILNS</string>
     <string name="treatments_shortname">TRAT</string>
     <string name="objectives_shortname">OBI</string>
     <string name="wear_shortname">CEAS</string>
     <string name="smscommunicator_shortname">SMS</string>
     <string name="short_tabtitles">Scurtează titlurile secțiunilor</string>
     <string name="always_use_shortavg">Folosește întotdeauna media scurtă a diferenței în locul diferenței simple</string>
+    <string name="always_use_shortavg_summary">Folositor când datele de la surse nefiltrate precum xDrip+ devin \'\'zgomotoase\".</string>
     <string name="profile">Profil</string>
     <string name="openapsama_max_daily_safety_multiplier_summary">Valoare implicită: 3\nAceasta este o setare de critică de securitate a OpenAPS. Asta înseamnă că se limitează bazala lade 3x valoarea maximă a bazalelor tale.Cel mai probabil nu veți schimba această valoare, dar trebuie să țineți cont de ce se discută despre “3x max zilnic; 4x curent” ca valori de siguranță.</string>
     <string name="openapsama_current_basal_safety_multiplier_summary">Valoare implicită: 4\nAceasta este cealaltă jumătate a cheii de siguranță a OpenAPS și cealaltă jumătate a \"3x max zilnic; 4x curent\" al setărilor de siguranță.Aceasta înseamnă că bazala dumneavoastră, indiferent de bazala maximă configurată în pompă, nu poate fi mai mare de acest număr înmulțit cu nivelul curent al bazalei active. Această limitare este impusă pentru a evita posibilitatea de a intra pe un teritoriu periculos prin setarea unei bazale maxime excesiv de mari înainte de a înțelege funcționarea algoritmului. Din nou, valoarea implictă este 4x; majoritatea oamenilor nu vor trebui să ajusteze această valoare și vor modifica, mai degrabă, alte valori dacă vor simți că această valoare le stă în cale.</string>
@@ -395,6 +386,7 @@
     <string name="basal_shortname">R_BAZ</string>
     <string name="deviation_shortname">DEV</string>
     <string name="activity_shortname">ACT</string>
+    <string name="bgi_shortname">-BGI</string>
     <string name="abs_insulin_shortname">ABS</string>
     <string name="devslope_shortname">DEVSLOPE</string>
     <string name="nav_about">Despre</string>
@@ -405,8 +397,6 @@
     <string name="xdripstatus_shortname">xds</string>
     <string name="wear_showbgi_title">Arată BGI</string>
     <string name="wear_showbgi_summary">Adaugă BGI în linia de status</string>
-    <string name="ns_noupload">Fără trimitere către NS</string>
-    <string name="ns_noupload_summary">Toate trimiterile de date către NS sunt oprite. AAPS este conectat la NS dar nu se fac schimbări în NS</string>
     <string name="overview_extendedbolus_cancel_button">Renunță la bolusul extins</string>
     <string name="doprofileswitch">Schimbă profilul</string>
     <string name="careportal_sensor_label">Senzor</string>
@@ -421,7 +411,6 @@
     <string name="nsalarm_urgent_staledatavalue_label">Prag date mult prea vechi [min]</string>
     <string name="openapsama_autosens_period">Interval pentru autosens [o]</string>
     <string name="openapsama_autosens_period_summary">Numărul de ore din trecut pentru detectarea sensibilității (se exclude timpul de absorbție al carbo)</string>
-    <string name="pump">Pompă</string>
     <string name="openaps">OpenAPS</string>
     <string name="uploader">Uploader</string>
     <string name="configbuilder_sensitivity">Detectare sensibilitate</string>
@@ -468,6 +457,7 @@
     <string name="activity_target">țintă activitate</string>
     <string name="hypo_duration">durată țintă</string>
     <string name="hypo_target">țintă hipo</string>
+    <string name="reuse_profile_pct_hours">Reutilizare %1$d%% %2$dh</string>
     <string name="wearcontrol_title">Controlare din ceas</string>
     <string name="wearcontrol_summary">Setare Ținte-Temporare și se introduc Tratamente din ceas.</string>
     <string name="food">Mâncare</string>
@@ -562,9 +552,9 @@
     <string name="category">Categorie</string>
     <string name="subcategory">Subcategorie</string>
     <string name="bolusrecordedonly">Bolusul va fi doar consemnat (nu va fi livrat de pompă)</string>
-    <string name="ns_autobackfill_summary">Autocompletează valorile glicemiei lipsă din NS</string>
     <string name="loop_smbsetbypump_label">SMB setat de pompă</string>
     <string name="overview_show_activity">Activitate</string>
+    <string name="overview_show_bgi">Impactul glicemiei</string>
     <string name="overview_show_sensitivity">Sensibilitate</string>
     <string name="overview_show_deviations">Deviații</string>
     <string name="overview_show_cob">Carbohidrați activi</string>
@@ -628,7 +618,6 @@
     <string name="virtualpump_type">Tipul pompei virtuale</string>
     <string name="virtualpump_definition">Definirea pompei</string>
     <string name="virtualpump_pump_def">Bolus: Pas=%1$s\nBolus Extins: [Pas=%2$s, Durată=%3$smin-%4$sh]\nBazală: Pas=%5$s\nRBT: %6$s (cu %7$s), Durată=%8$smin-%9$sh\n%10$s</string>
-    <string name="ns_autobackfill_title">Autocompletează glicemiile lipsă</string>
     <string name="wear_wizard_settings">Asistent setări</string>
     <string name="wear_wizard_settings_summary">Calcule incluse în rezultatul asistentului:</string>
     <string name="wear_display_settings">Setări afișare</string>
@@ -636,14 +625,12 @@
     <string name="enable_nsclient">Activează NSClient</string>
     <string name="welcometosetupwizard">Ați pornit asistentul pentru setări. Acesta vă va ajuta pentru configurarea setărilor\n</string>
     <string name="readstatus">Citire stare</string>
-    <string name="adjustprofileinns">Schimbările trebuie făcute în NS</string>
     <string name="exitwizard">Ignoră asistentul pentru setări</string>
     <string name="setupwizard_loop_description">Apăsați butonul pentru a permite AndroidAPS să sugereze/facă schimbări ale bazalei</string>
     <string name="setupwizard_sensitivity_description">Pluginul Sensibilitate este folosit pentru estimarea sensibilității și calcularea COB. Pentru mai multe info vizitați:</string>
     <string name="setupwizard_sensitivity_url">https://github.com/MilosKozak/AndroidAPS/wiki/Sensitivity-detection-and-COB</string>
     <string name="nsclientinfotext">NSClient se ocupă de conectarea la Nightscout. Puteți sări peste această parte, dar nu se vor îndeplini anumite obiective dacă faceți acest lucru.</string>
     <string name="diawarning">Reamintire: noile profiluri necesită o durată de acțiune a insulinei (DIA) de cel puțin 5 ore. DIA de 5-6 ore în profilurile noi sunt echivalente cu DIA 3 ore din profilele vechi.</string>
-    <string name="setupwizard_profile_description">Selectați sursa sau profilul. Dacă pacientul este copil, ar fi bine să alegeți un profil NS. Dacă nu aveți profil NS, puteți alege profil local. De aici alegeți doar sursa profilului; pentru a utiliza acest profil, trebuie să îl activați prin executarea unei \"Schimbări de profil\"</string>
     <string name="setupwizard_aps_description">Alegeți unul dintre algoritmii disponibili. Algoritmii sunt aranjați de la cel mai vechi spre cel mai nou. Algoritmii mai noi sunt, de obicei, mai puternici și mai agresivi. De aceeea, dacă sunteți la început, ar fi indicat să porniți cu AMA și nu cu cel mai nou. Este important să parcurgeți documentația OpenAPS și să îl configurați corect înainte de a folosi aplicația.</string>
     <string name="setupwizard_pump_waiting_for_riley_link_connection">Vă rugăm configuraţi RileyLink mai jos. După selectarea unui RileyLink, va fi posibil să continuaţi setarea odată ce starea RieyLink este \"Connected\". Acest lucru ar putea dura un minut.\n</string>
     <string name="setupwizard_pump_pump_not_initialized"><b>Notă:</b> Puteți continua configurarea imediat ce pompa a fost inițializată.\n</string>
@@ -690,6 +677,7 @@
     <string name="nav_logsettings">Setări loguri</string>
     <string name="resettodefaults">Resetare la setările implicite</string>
     <string name="nsmalfunction">Funcționare incorectă a NSClient. Aveți în vedere un restart al NS și al NSClient.</string>
+    <string name="time_offset">Decalaj</string>
     <string name="setupwizard_preferred_aps_mode">Modul APS preferat</string>
     <string name="treatments_wizard_total_label">Total</string>
     <string name="calculation_short">Calc</string>
@@ -745,7 +733,6 @@
     <string name="format_carbs_ic">%1$.0fg IC: %2$.1f</string>
     <string name="format_cob_ic">%1$.1fg IC: %2$.1f</string>
     <string name="format_percent">%1$d%%</string>
-    <string name="boluswizard">Asistent bolusare</string>
     <string name="unit_minute_short">min</string>
     <string name="profile_name">Nume profil:</string>
     <string name="selected_profile">Selectat:</string>
@@ -755,7 +742,6 @@
     <string name="objectives_button_unstart">Șterge starea \"Început\"</string>
     <string name="doyouwantresetstart">Doriți să reîncepeți obiectivul? Vă puteți pierde progresul.</string>
     <string name="setupwizard_units_prompt">Selectați unitățile în care doriți să afișați valorile</string>
-    <string name="ns_ploadlocalprofile">Transmiteți modificările profilului local către NS</string>
     <string name="dia_short">DIA</string>
     <string name="ic_short">IC</string>
     <string name="isf_short">ISF</string>
@@ -866,6 +852,7 @@
     <string name="donate_your_data_to_science">Donează datele în scopuri științifice</string>
     <string name="open_humans_short">OH</string>
     <string name="you_have_been_signed_out_of_open_humans">Ai fost deconectat de la Open Humans</string>
+    <string name="click_here_to_sign_in_again_if_this_wasnt_on_purpose">Dați click aici pentru a vă conecta din nou, dacă a fost din greșeală.</string>
     <string name="only_upload_if_connected_to_wifi">Încarcă numai pe conexiune WiFi</string>
     <string name="only_upload_if_charging">Încărca numai dacă telefonul este la încărcat</string>
     <string name="worker_state">Stare prelucrare: %s</string>
@@ -876,12 +863,25 @@
     <string name="copytolocalprofile_invalid">Nu se poate crea profilul local. Profilul este invalid.</string>
     <string name="cta_dont_kill_my_app_info">Nu-mi opri aplicația?</string>
     <string name="smscommunicator_report_pump_ureachable_summary">Trimite SMS dacă este generata o alarma de eroare conexiune pompa</string>
+    <string name="smscommunicator_pump_ureachable">Raportează pompa inaccesibilă</string>
     <string name="advisoralarm">Rulează alarma când este timpul să mănânci</string>
     <string name="alarminxmin">Rulează alarma în %1$d min</string>
     <string name="bolusadvisor">Consilier bolus</string>
     <string name="bolusadvisormessage">Glicemia ta e mare. In loc sa mănânci acum, este recomandat sa mai aștepți un pic. Vrei sa faci un bolus de corecție acum si sa setezi o alarma pentru a manca mai târziu? In acest caz, nu vor fi înregistrați carbohidrați si va trebui sa folosești calculatorul de bolus din nou când îți vom reaminti.</string>
     <string name="enablebolusadvisor">Activare consilier bolus</string>
+    <string name="enablebolusadvisor_summary">Folosește o alarma de reamintire pentru a începe sa mănânci mai târziu în loc de alerta de la calculatorul de bolus din timpul hiperglicemiei (\"pre-bolus\")</string>
     <string name="time_to_eat">Timpul sa mănânci!\nRuleaza Calculatorul de Bolus pentru a face calculele din nou.</string>
     <string name="timetoeat">Timpul sa mănânci</string>
+    <string name="fabric_upload_disabled">Încărcarea jurnalelor de erori este dezactivata!</string>
     <string name="graph_menu_divider_header">Grafic</string>
+    <string name="chart_menu">Meniu diagramă</string>
+    <string name="clear_filter">Șterge filtru</string>
+    <string name="trend_arrow">Săgeată tendinţă</string>
+    <string name="cannula">Canula</string>
+    <string name="userentry">Înregistrare utilizator</string>
+    <string name="common_values">Folosește valorile corespunzătoarea celor mai mari mese pe care le ai de obicei\n</string>
+    <string name="summary_email_for_crash_report">Această adresă de e-mail va fi atașată rapoartelor de eroare, astfel încât să vă putem contacta în cazuri urgente. Este opțională.</string>
+    <string name="email_address">Adresă de e-mail</string>
+    <string name="privacy_settings">Setări de confidenţialitate</string>
+    <string name="privacy_summary">Puteți furniza o adresă de e-mail opțională dacă doriți să fiți notificat despre erorile aplicației. Acesta nu este un serviciu automat. Veți fi contactat de dezvoltatori în situații periculoase.</string>
 </resources>

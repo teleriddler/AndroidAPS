@@ -2,7 +2,6 @@
 <resources>
     <!--    <string name="fi_lang" translatable="false">Finnish</string> -->
     <!--   <string name="he_lang" translatable="false">Hebrew</string> -->
-    <!--    <string name="ga_lang" translatable="false">Irish</string> -->
     <!--    <string name="ja_lang" translatable="false">Japanese</string> -->
     <string name="treatmentssafety_title">Behandelings veiligheid</string>
     <string name="treatmentssafety_maxbolus_title">Maks toelaatbare Bolus [U]</string>
@@ -27,7 +26,6 @@
     <string name="description_overview">Wys die huidige staat van jou lus en knoppies vir mees algemene optrede</string>
     <string name="description_persistent_notification">Toon \'n voortgesette kennisgewing met \'n kort oorsig van wat jou lus besig is om te doen</string>
     <string name="description_profile_local">Definieer\'n profiel wat beskikbaar is aflyn.</string>
-    <string name="description_profile_nightscout">Bied die profiel wat jy het beskryf het in Nightscout</string>
     <string name="description_pump_mdi">Pomp integrasie vir mense wat veelvoudige daaglikse inspuitings doen vir hul diabetes terapie/regime</string>
     <string name="description_pump_virtual">Pomp integrasie vir pompe wat nog nie enige drywer het nie (oop lus)</string>
     <string name="description_sensitivity_aaps">Sensitiwiteit word bereken op dieselfde manier as Oref0, maar jy kan die tydsraamwerk spesifiseer in die verlede. Minimale karb absorpsie is bereken uit maks karb absorpsie tyd vanaf voorkeure.</string>
@@ -72,14 +70,11 @@
     <string name="sms_delta">Delta:</string>
     <string name="configbuilder">Konfigurasie bouer</string>
     <string name="overview">Oorsig</string>
-    <string name="nsprofile">Ns Profiel</string>
     <string name="treatments">Behandelings</string>
     <string name="virtualpump">Virtuele Pomp</string>
     <string name="careportal">Careportal</string>
     <string name="configbuilder_pump">Pomp</string>
     <string name="configbuilder_pump_description">Watter pomp wil jy gebruik met AndroidAPS?</string>
-    <string name="configbuilder_treatments">Behandelings</string>
-    <string name="configbuilder_treatments_description">Watter plugin moet gebruik word vir behandeling hantering?</string>
     <string name="configbuilder_profile">Profiel</string>
     <string name="configbuilder_profile_description">Watter profiel moet AndroidAPS gebruik?</string>
     <string name="configbuilder_aps">APS</string>
@@ -88,7 +83,6 @@
     <string name="configbuilder_general_description">Hier is \'n paar algemene invoegtoepassings wat jy dalk nuttig sal vind.</string>
     <string name="configbuilder_constraints_description">Watter beperkings word toegepas?</string>
     <string name="constraints">Beperkings</string>
-    <string name="loop">Lus</string>
     <string name="configbuilder_loop">Lus</string>
     <string name="configbuilder_loop_description">Gebruik die om AndroidAPS se lus integrasie te aktiveer.</string>
     <string name="loop_aps_label">APS</string>
@@ -154,7 +148,6 @@
     <string name="smscommunicator_loophasbeenenabled">Loop is geaktiveerd</string>
     <string name="smscommunicator_loopisenabled">Lus geaktiveer</string>
     <string name="valuelimitedto">%1$.2f beperk tot %2$.2f</string>
-    <string name="valueoutofrange">Waarde %1$s is uit harde perke</string>
     <string name="smscommunicator_remotecommandnotallowed">Afstandbeheerde bevel word nie toegelaat nie</string>
     <string name="smscommunicator_remotebolusnotallowed">Afstandbeheerde bolus nie beskikbaar nie. Probeer later weer.</string>
     <string name="smscommunicator_profilereplywithcode">Om profiel te verander na %1$s %2$d%% antwoord met %3$s</string>
@@ -210,11 +203,7 @@
     <string name="openapsma_autosensdata_label">Autosens data</string>
     <string name="openapsma_scriptdebugdata_label">Skrip foutopspoor</string>
     <string name="openapsama_useautosens">Gebruik autosens kenmerk</string>
-    <string name="refresheventsfromnightscout">Verfris gebeure van NS</string>
     <string name="deletefuturetreatments">Skrap behandelings in die toekoms</string>
-    <string name="eatingsoon">Eet binnekort</string>
-    <string name="hypo">Hipo</string>
-    <string name="activity">Aktiwiteit</string>
     <string name="actions_shortname">ACT</string>
     <string name="configbuilder_shortname">CONF</string>
     <string name="loop_shortname">LUS</string>
@@ -222,7 +211,6 @@
     <string name="localprofile_shortname">LP</string>
     <string name="overview_shortname">TUIS</string>
     <string name="virtualpump_shortname">VPOMP</string>
-    <string name="profileviewer_shortname">NSPROFIEL</string>
     <string name="treatments_shortname">BEHANDEL</string>
     <string name="objectives_shortname">OBJ</string>
     <string name="wear_shortname">WEAR</string>
@@ -309,15 +297,12 @@
     <string name="xdripstatus_shortname">xds</string>
     <string name="wear_showbgi_title">Wys BGI</string>
     <string name="wear_showbgi_summary">Voeg BGI by status lyn</string>
-    <string name="ns_noupload">Geen oplaai na NS</string>
-    <string name="ns_noupload_summary">Alle data na NS gestuur word laat val is gedaal. AAPS is gekoppel aan NS maar geen verandering in NS is gedoen</string>
     <string name="overview_extendedbolus_cancel_button">Kanselleer Verlengde Bolus</string>
     <string name="ns_alarmoptions">Alarm Opsies</string>
     <string name="nsalarm_staledatavalue_label">Ou data drumpel [min]</string>
     <string name="nsalarm_urgent_staledatavalue_label">Nood ou data drumpel [min]</string>
     <string name="openapsama_autosens_period">Interval vir autosens [h]</string>
     <string name="openapsama_autosens_period_summary">Hoeveelheid ure in die verlede vir sensitiwiteit opsporing (karbohidrate opname tyd is uitgesluit)</string>
-    <string name="pump">Pomp</string>
     <string name="openaps">OpenAPS</string>
     <string name="uploader">Oplaaier</string>
     <string name="configbuilder_sensitivity">Sensitiwiteit opsporing</string>
@@ -441,7 +426,6 @@
     <string name="do_not_bolus_record_only">Moet nie bolus. Rekord alleen</string>
     <string name="category">Kategorie</string>
     <string name="subcategory">Subkategorie</string>
-    <string name="ns_autobackfill_summary">Autobackfill vermiste BGs vanaf NS</string>
     <string name="loop_smbsetbypump_label">SMB gestel deur pomp</string>
     <string name="overview_show_activity">Aktiwiteit</string>
     <string name="overview_show_sensitivity">Sensitiewiteit</string>
@@ -507,7 +491,6 @@
     <string name="virtualpump_type">Virtuele Pomp</string>
     <string name="virtualpump_definition">Pomp definisie</string>
     <string name="virtualpump_pump_def">Bolus: Stap =%1$s\nVerlengde Bolus: [stap%2$s, duur = =%3$smin -%4$sh]\nBasal: stap =%5$s\nTBR: %6$s (deur %7$s), duur =%8$smin -%9$sh\n%10$s</string>
-    <string name="ns_autobackfill_title">Autobackfill BG</string>
     <string name="wear_wizard_settings">Ghoeroe-instellings</string>
     <string name="wear_wizard_settings_summary">Berekeninge is ingesluit in die ghoeroe verslag:</string>
     <string name="wear_display_settings">Vertooninstellings</string>
@@ -515,13 +498,11 @@
     <string name="enable_nsclient">Aktiveer NSClient</string>
     <string name="welcometosetupwizard">Welkom by opstelling-Ghoeroe. Dit sal jou lei deur die opstelling proses\n</string>
     <string name="readstatus">Lees status</string>
-    <string name="adjustprofileinns">Veranderinge moet gedoen word in NS</string>
     <string name="exitwizard">Slaan opstelling-Ghoeroe oor</string>
     <string name="setupwizard_loop_description">Druk die knoppie hieronder om AndroidAPS te aktiveer om voorstelle/of veranderings te maak aan basale</string>
     <string name="setupwizard_sensitivity_description">Sensitiwiteit plugin vir sensitiwiteit opsporing en KAB berekening. Vir meer inligting besoek:</string>
     <string name="setupwizard_sensitivity_url">https://github.com/MilosKozak/AndroidAPS/wiki/Sensitivity-detection-and-COB</string>
     <string name="diawarning">Onthou asseblief: dat nuwe insulien profiele vereis DIA van minstens 5h. DIA 5 – 6h op nuwe profiel is gelyk aan DIA 3h op ou insulien profiele.</string>
-    <string name="setupwizard_profile_description">Kies asseblief bron van profiel. As Pasiënt \'n kind is gebruik NS profiel. As niemand jou volg op Nightscout sal jy waarskynlik plaaslike profiel kies. Onthou asseblief dat jy net die bron kies van profiel. Om dit te gebruik moet jy dit aktiveer deur uitvoering \"Profiel skakelaar\"</string>
     <string name="setupwizard_aps_description">Kies een van beskikbare algoritmes. Hulle is gesorteer vanaf oudste tot jongste. Nuwer algoritmes is gewoonlik kragtiger en meer aggressief. Dus as jy nuut is met jou lus, sal jy waarskynlik begin met AMA en nie met jongste een. Moenie vergeet om die OpenAPS dokumentasie te lees en te konfigureer voor gebruik.</string>
     <string name="startobjective">Begin jou eerste doelwit</string>
     <string name="permission">Toestemming</string>
@@ -603,7 +584,6 @@
     <string name="format_carbs_ic">%1$.0fg IC: %2$.1f</string>
     <string name="format_cob_ic">%1$.1fg IC: %2$.1f</string>
     <string name="format_percent">%1$d%%</string>
-    <string name="boluswizard">Bolus slimjan</string>
     <string name="unit_minute_short">min</string>
     <!-- SMS Communicator & OTP Authenticator -->
 </resources>

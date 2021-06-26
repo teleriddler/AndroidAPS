@@ -2,7 +2,6 @@
 <resources>
     <!--    <string name="fi_lang" translatable="false">Finnish</string> -->
     <!--   <string name="he_lang" translatable="false">Hebrew</string> -->
-    <!--    <string name="ga_lang" translatable="false">Irish</string> -->
     <!--    <string name="ja_lang" translatable="false">Japanese</string> -->
     <string name="treatmentssafety_title">Terapijos saugumas</string>
     <string name="treatmentssafety_maxbolus_title">Maksimalus leistinas bolusas [U]</string>
@@ -30,7 +29,6 @@
     <string name="description_overview">Rodo dabartinę Ciklo būseną ir pagrindinių veiksmų mygtukus</string>
     <string name="description_persistent_notification">Rodo atsinaujinančius pranešimus su trumpa Ciklo veiklos apžvalga</string>
     <string name="description_profile_local">Nustatykite vietinį profilį.</string>
-    <string name="description_profile_nightscout">Nustato profilį, kuris įvestas Nightscout puslapyje</string>
     <string name="description_pump_mdi">Integracija žmonėms, naudojantiems insulino injektorius</string>
     <string name="description_pump_virtual">Integracija pompoms, kurios dar neturi reikalingo valdiklio (Atviras Ciklas)</string>
     <string name="description_sensitivity_aaps">Jautrumas insulinui apskaičiuojamas taip pat kaip ir Oref0, tačiau jūs galite nustatyti, koks praeities laikotarpis bus naudojamas. Minimalus angliavandenių įsisavinimo greitis apskaičiuojamas remiantis maksimaliu angliavandenių įsisavinimo greičiu, kuris įvestas Nustatymuose.</string>
@@ -77,14 +75,11 @@
     <string name="sms_delta">Pokytis:</string>
     <string name="configbuilder">Konfigūracija</string>
     <string name="overview">Apžvalga</string>
-    <string name="nsprofile">NS profilis</string>
     <string name="treatments">Terapija</string>
     <string name="virtualpump">Virtuali pompa</string>
     <string name="careportal">Priežiūra</string>
     <string name="configbuilder_pump">Pompa</string>
     <string name="configbuilder_pump_description">Kokią pompą naudosite su AndroidAPS?</string>
-    <string name="configbuilder_treatments">Terapija</string>
-    <string name="configbuilder_treatments_description">Kuris įskiepis bus naudojamas terapijos tvarkymui?</string>
     <string name="configbuilder_profile">Profilis</string>
     <string name="configbuilder_profile_description">Kurį profilį naudos AndroidAPS?</string>
     <string name="configbuilder_aps">DKS</string>
@@ -93,7 +88,6 @@
     <string name="configbuilder_general_description">Bendrieji įskiepiai, kurie gali praversti.</string>
     <string name="configbuilder_constraints_description">Kokie apribojimai taikomi?</string>
     <string name="constraints">Apribojimai</string>
-    <string name="loop">Ciklas</string>
     <string name="configbuilder_loop">Ciklas</string>
     <string name="configbuilder_loop_description">Naudokite, norėdami aktyvuoti AndroidAPS Ciklą.</string>
     <string name="loop_aps_label">DKS</string>
@@ -193,7 +187,6 @@
     <string name="smscommunicator_loophasbeenenabled">Ciklas buvo įjungtas</string>
     <string name="smscommunicator_loopisenabled">Ciklas įjungtas</string>
     <string name="valuelimitedto">%1$.2f apribotas iki %2$.2f</string>
-    <string name="valueoutofrange">Vertė %1$s viršija griežtą limitą</string>
     <string name="smscommunicator_pumpconnectwithcode">Pompos prijungimui atsakykite su kodu %1$s</string>
     <string name="smscommunicator_pumpconnectfail">Nepavyko prisijungti prie pompos</string>
     <string name="smscommunicator_pumpdisconnectwithcode">Norėdami atjungti pompą %1$d min., atsakykite kodu %2$s</string>
@@ -266,11 +259,7 @@
     <string name="openapsma_autosensdata_label">Autosens duomenys</string>
     <string name="openapsma_scriptdebugdata_label">Scenarijų derinimas</string>
     <string name="openapsama_useautosens">Naudoti Autosens funkciją</string>
-    <string name="refresheventsfromnightscout">Atnaujinti įvykius iš NS</string>
     <string name="deletefuturetreatments">Ištrinti ateities įrašus</string>
-    <string name="eatingsoon">Netrukus valgysiu</string>
-    <string name="hypo">Hipo</string>
-    <string name="activity">Aktyvumas</string>
     <string name="actions_shortname">VEIKS</string>
     <string name="configbuilder_shortname">KONF</string>
     <string name="loop_shortname">CIKLAS</string>
@@ -278,7 +267,6 @@
     <string name="localprofile_shortname">VP</string>
     <string name="overview_shortname">PRADŽIA</string>
     <string name="virtualpump_shortname">VPompa</string>
-    <string name="profileviewer_shortname">NSprofilis</string>
     <string name="treatments_shortname">ĮRAŠ</string>
     <string name="objectives_shortname">TIKSL</string>
     <string name="wear_shortname">WEAR</string>
@@ -394,8 +382,6 @@
     <string name="xdripstatus_shortname">xds</string>
     <string name="wear_showbgi_title">Rodyti KG</string>
     <string name="wear_showbgi_summary">Pridėti KG prie statuso linijos</string>
-    <string name="ns_noupload">Nėra įkėlimų į NS</string>
-    <string name="ns_noupload_summary">Visi duomenys, kurie gali būti siunčiami į NS, paliekami. AAPS yra susieta su NS, bet jokie pokyčiai NS nedaromi</string>
     <string name="overview_extendedbolus_cancel_button">Atšaukti ištęstą bolusą</string>
     <string name="doprofileswitch">Profilio keitimas</string>
     <string name="careportal_sensor_label">Sensorius</string>
@@ -410,7 +396,6 @@
     <string name="nsalarm_urgent_staledatavalue_label">Kritiškai seni duomenys, riba [min]</string>
     <string name="openapsama_autosens_period">Autosens intervalas [h]</string>
     <string name="openapsama_autosens_period_summary">Valandų skaičius praeityje jautrumo nustatymui (angliavandenių įsisavinimo laikas neįtrauktas)</string>
-    <string name="pump">Pompa</string>
     <string name="openaps">AtviraDKS</string>
     <string name="uploader">Siuntėjas</string>
     <string name="configbuilder_sensitivity">Jautrumo nustatymas</string>
@@ -550,7 +535,6 @@
     <string name="category">Kategorija</string>
     <string name="subcategory">Subkategorija</string>
     <string name="bolusrecordedonly">Bolusai bus tik įrašyti (nebus suleisti iš pompos)</string>
-    <string name="ns_autobackfill_summary">Automatiškai atstatyti trūkstamus KG duomenis iš NS</string>
     <string name="loop_smbsetbypump_label">SMB nustatyta iš pompos</string>
     <string name="overview_show_activity">Aktyvumas</string>
     <string name="overview_show_sensitivity">Jautrumas insulinui</string>
@@ -616,7 +600,6 @@
     <string name="virtualpump_type">Virtualios pompos tipas</string>
     <string name="virtualpump_definition">Pompos nustatymas</string>
     <string name="virtualpump_pump_def">Bolusas: Žingsnis=%1$s\nIštęstinis bolusas: [Žingsnis=%2$s, Trukmė=%3$smin-%4$sh]\nBazė: Žingsnis=%5$s\nLDB: %6$s (iš %7$s), Trukmė=%8$smin -%9$sh\n%10$s</string>
-    <string name="ns_autobackfill_title">Automatiškai užpildyti trūkstamus KG duomenis</string>
     <string name="wear_wizard_settings">Išmaniojo laikrodžio nustatymai</string>
     <string name="wear_wizard_settings_summary">Skaičiavimai, įtraukti į Patarėjo rezultatą:</string>
     <string name="wear_display_settings">Ekrano nustatymai</string>
@@ -624,14 +607,12 @@
     <string name="enable_nsclient">Įjungti NSClient</string>
     <string name="welcometosetupwizard">Sveiki atvykę į sąrankos vedlį. Jis lydės jus per visą nustatymų procesą\n</string>
     <string name="readstatus">Statuso nuskaitymas</string>
-    <string name="adjustprofileinns">Pakeitimai turi būti daromi NS</string>
     <string name="exitwizard">Praleisti sąrankos vedlį</string>
     <string name="setupwizard_loop_description">Paspauskite mygtuką žemiau, norėdami leisti AndroidAPS patarti/atlikti bazės pakeitimus</string>
     <string name="setupwizard_sensitivity_description">Jautrumo įskiepis yra naudojamas jautrumo aptikimui ir AAO skaičiavimams. Daugiau informacijos:</string>
     <string name="setupwizard_sensitivity_url">https://github.com/MilosKozak/AndroidAPS/wiki/Sensitivity-detection-and-COB</string>
     <string name="nsclientinfotext">NSClient palaiko ryšį su Nightscout. Jūs galite praleisti šią dalį dabar, bet negalėsite baigti mokymosi programos, kol nenustatysite ryšio su NS.</string>
     <string name="diawarning">Atminkite: DKS profiliams reikia IVT bent 5 val. IVT = 5 - 6 val DKS profilyje atitinka IVT = 3 val sename (pompos terapijos) insulino profilyje.</string>
-    <string name="setupwizard_profile_description">Prašome pasirinkti profilį. Jei pacientas yra vaikas, turite naudoti NS profilį. Jei niekas neseka jūsų Nightscout platformoje, tada geriau pasirinkti Vietinį profilį. Atminkite, kad čia Jūs tik pasirenkate profilio šaltinį. Norėdami jį aktyvuoti, turite atlikti Profilio keitimą</string>
     <string name="setupwizard_aps_description">Pasirinkite vieną iš esamų algoritmų. Jie yra išdėstyti nuo seniausio iki naujausio. Naujesni algoritmai yra galingesni ir agresyvesni. Taigi jei esate naujas vartotojas, geriau pradėti nuo AMA, o ne naujesnio. Nepamirškite perskaityti dokumentaciją ir sukonfigūruoti jį prieš naudojant.</string>
     <string name="setupwizard_pump_waiting_for_riley_link_connection">Sukonfigūruokite RileyLink žemiau. Pasirinkę RileyLink, galėsite tęsti diegimą, kai tik RileyLink būsena bus „Prisijungta“. Tai gali užtrukti minutę.\n</string>
     <string name="setupwizard_pump_pump_not_initialized"><b>Pastaba:</b> Sąranką galite tęsti, kai tik inicijuojama pompa.\n</string>
@@ -734,7 +715,6 @@
     <string name="format_carbs_ic">%1$.0fg IA: %2$.1f</string>
     <string name="format_cob_ic">%1$.1fg IA: %2$.1f</string>
     <string name="format_percent">%1$d%%</string>
-    <string name="boluswizard">Boluso patarėjas</string>
     <string name="unit_minute_short">min.</string>
     <string name="profile_name">Profilio pavadinimas:</string>
     <string name="selected_profile">Parinkta:</string>
@@ -744,7 +724,6 @@
     <string name="objectives_button_unstart">Išvalyti pradėtus</string>
     <string name="doyouwantresetstart">Ar norite iš naujo nustatyti tikslų pradžią? Jūs galite prarasti jau pasiektus.</string>
     <string name="setupwizard_units_prompt">Pasirinkite vienetus, kurių vertes norite parodyti</string>
-    <string name="ns_ploadlocalprofile">Įkelti vietinio profilio pakeitimus į NS</string>
     <string name="dia_short">IVT</string>
     <string name="ic_short">IA</string>
     <string name="isf_short">JIF</string>
